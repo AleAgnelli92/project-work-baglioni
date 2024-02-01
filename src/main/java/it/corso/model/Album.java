@@ -29,7 +29,6 @@ public class Album {
 	private int quantita;
 	@Column
 	private String tipologia;
-	
 	@Column
 	private String descrizione;
 	
