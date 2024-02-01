@@ -1,10 +1,12 @@
 package it.corso.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import it.corso.dao.ClienteDao;
 import it.corso.model.Cliente;
 
+@Service
 public class ClienteServiceImpl implements ClienteService {
 
 	@Autowired
