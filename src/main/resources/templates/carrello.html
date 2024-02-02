@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Carrello Utente</title>
+	</head>
+	<body>
+		<h4>Il tuo carrello</h4>
+		<ul>
+			<li th:each="album : ${albumNelCarrello}">
+				<span th:text="'Titolo: ' + ${album.titolo}"></span>
+				<br>
+				<span th:text="'Prezzo: ' + ${album.prezzo}"></span>
+			</li>
+			
+		</ul>
+
+		<a th:href="@{/catalogo_prova.html}">Torna a catalogo</a>
+	</body>
+</html>
