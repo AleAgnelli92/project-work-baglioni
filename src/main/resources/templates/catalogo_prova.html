@@ -33,6 +33,10 @@
 									<a th:href="@{/dettaglio_album_prova(id=${album.id})}" class="btn btn-primary btn-sm" 
 										th:text="'Dettaglio Album'"></a>
 								</td>
+								<td class=" align-middle text-end">
+									<a th:href="@{/carrello/aggiungi(id=${album.id})}" class="btn btn-primary btn-sm" 
+										th:text="'Acquista'"></a>
+								</td>
 							</tr>
 						</tbody>
 					</table>
