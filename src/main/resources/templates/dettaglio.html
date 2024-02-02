@@ -20,6 +20,10 @@
 				<div class="col-4">
 					<h5 th:text="'Titolo: ' + ${album.titolo}"></h5>
 				</div>
+				<div class=" align-middle text-end">
+					<a th:href="@{/carrello/aggiungi(id=${album.id})}" class="btn btn-primary btn-sm" 
+										th:text="'Acquista'"></a>
+								</div>
 				<div class="col-4">
 					<img th:if="${album.copertina != null}" th:src="@{${album.copertina}}" 
 						class="img-thumbnail" alt="album"
