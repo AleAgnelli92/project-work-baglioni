@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import it.corso.service.AlbumService;
 
 @Controller
-@RequestMapping("/catalogo.html")
+@RequestMapping("/catalogo")
 public class CatalogoController {
 
 	@Autowired
@@ -19,6 +19,6 @@ public class CatalogoController {
 	public String getPage(Model model)
 	{
 		model.addAttribute("albums", albumService.getAlbums());	
-		return "catalogo.html";
+		return "catalogo";
 	}
 }

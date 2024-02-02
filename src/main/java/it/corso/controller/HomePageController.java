@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/homepage.html")
+@RequestMapping("/homepage")
 public class HomePageController {
 	
 	@GetMapping
     public String home() {
-        return "/homepage.html";
+        return "/homepage";
     }
 }

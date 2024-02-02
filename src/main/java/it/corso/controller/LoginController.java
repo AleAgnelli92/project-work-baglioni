@@ -11,7 +11,7 @@ import it.corso.model.Cliente;
 import it.corso.service.ClienteService;
 
 @Controller
-@RequestMapping("/login.html")
+@RequestMapping("/login")
 public class LoginController {
 
 	@Autowired
@@ -19,7 +19,7 @@ public class LoginController {
 	
 	@GetMapping
     public String login() {
-        return "login.html";
+        return "login";
     }
 	
 	@PostMapping
