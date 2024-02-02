@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import it.corso.service.AlbumService;
 
-// localhost:8080/dettaglio
+// localhost:8080/dettaglio_album_prova
 @Controller
-@RequestMapping("/dettaglio_album")
+@RequestMapping("/dettaglio_album_prova")
 public class DettaglioController
 {
 	@Autowired
@@ -21,6 +21,6 @@ public class DettaglioController
 			Model model)
 	{
 		model.addAttribute("album", albumService.getAlbumById(id));
-		return "dettaglio_album";
+		return "dettaglio_album_prova";
 	}
 }
