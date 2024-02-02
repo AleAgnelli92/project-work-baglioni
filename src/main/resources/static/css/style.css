@@ -1,0 +1,163 @@
+* {
+    font-family: 'Noto Sans', sans-serif;
+}
+.navbar {
+    transition: all 0.5s;
+}
+
+.navbar-nav {
+    align-items: center;
+    gap: 20px;
+}
+.nav-link {
+    margin: 0;
+    font-size: 16px;
+}
+
+.nav-link:hover, .icon-link:hover {
+    color: white !important;
+}
+
+.imgHome {
+    border: none !important;
+    background-color: white !important;
+}
+
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.centered {
+    position: absolute !important;
+    top: 25% !important;
+    left: 60% !important;
+  }
+
+.card-text {
+    font-size: 30px;
+    margin: 0;
+}
+.card-title {
+    margin: 0;
+    font-family: 'Parisienne', cursive;
+    font-size: 100px;
+}
+
+@media (max-width: 800px) {
+    .card-title {
+        font-size: 70px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .card-title {
+        font-size: 50px; 
+    }
+}
+
+.titoloCatalogoHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+   
+}
+
+.catalogoHome {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .catalogoHome {
+        height: 700px !important;
+    }
+}
+
+.card {
+    border: none;
+    
+}
+
+h5.prodotti {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+}
+
+p.prodotti {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+}
+
+.card-img-top {
+   width: 100% !important;
+   height: auto !important;
+   
+}
+
+a.cardHover:link {
+    color: black;
+    text-decoration: none;
+}
+
+a.cardHover:visited {
+    color: black;
+    text-decoration: none;
+}
+
+a.cardHover:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btnCatHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.custom-bg {
+    background-color: #f0f0f0; 
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.custom-img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+.btnBioHome {
+    margin-top: 10px;
+}
+
+.btnBioHome:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+.galleryHome {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.bgFooterHome {
+    background-color: black;
+}
+
+.text-white {
+    text-decoration: none;
+}
+
+.divFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
