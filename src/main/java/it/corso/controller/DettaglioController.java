@@ -12,7 +12,7 @@ import it.corso.service.AlbumService;
 
 // localhost:8080/dettaglio_album_prova
 @Controller
-@RequestMapping("/dettaglio_album_prova")
+@RequestMapping("/dettaglio.html")
 public class DettaglioController
 {
 	@Autowired
@@ -26,6 +26,6 @@ public class DettaglioController
 		Album album = albumService.getAlbumById(id);
 		model.addAttribute("album", album);
 		model.addAttribute("dettagli", album.getDettagli());
-		return "dettaglio_album_prova";
+		return "dettaglio.html";
 	}
 }
