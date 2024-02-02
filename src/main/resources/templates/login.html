@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>E-commerce ufficiale di Claudio Baglioni</title>
+        <title>Accesso</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/style.css">
@@ -25,7 +25,7 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="homepage.html">Home</a>
+                    <a class="nav-link" aria-current="page" href="homepage.html">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-secondary" href="bio.html">Bio</a>
@@ -34,12 +34,15 @@
                     <a class="nav-link text-secondary" href="catalogo.html">Catalogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="icon-link text-secondary" href="#">
-                      <i class='far fa-user-circle'></i>
-                    </a>
+                    <a class="icon-link active text-secondary" href="login.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                        </svg>
+                      </a>
                   </li>
                   <li class="nav-item">
-                    <a class="icon-link text-secondary" href="#">
+                    <a class="icon-link text-secondary" href="carrello.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                             <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1m3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1z"/>
                           </svg>
@@ -50,87 +53,93 @@
             </div>
         </nav>
         <!--IMG-->
-        <div class="card text-bg-dark imgHome">
-            <img src="img/baglioniHome.jpg" class="card-img" alt="Baglioni Home">
-            <div class="card-img-overlay centered">
-                <p class="card-text"><small>So long,</small></p>
-                <h5 class="card-title">Claudio</h5>
-            </div>
+        <div class="text-bg-dark divImgLogin">
+            <img src="img/login.jpg" class="imgLogin img-fluid" alt="Baglioni Accesso">
         </div>
-        <!--CATALOGO-->
-        <div class="catalogoHome mx-5">
-            <div class="titoloCatalogoHome">
-                <h4>Catalogo</h4>
-            </div>
-            <div class="row row-cols-auto gy-4 gx-4">
-                <div class="col col-md-4 col-sm">
-                      <div class="card flex-fill h-100 cardHover">
-                              <img src="img/eTuHomePage.jpeg" class="card-img-top" alt="E tu...">
-                              <div class="card-body">
-                                  <h5 class="card-title prodotti">E tu...</h5>
-                                  <p class="card-text prodotti">Il quinto album di Claudio Baglioni, pubblicato nel 1974.</p>
-                              </div>
-                              <a href="dettaglio.html" class="stretched-link"></a>
-                      </div>
-                </div>
-                <div class="col col-md-4 col-sm">
-                    <div class="card flex-fill h-100 cardHover">
-                      <img src="img/ioSonoQuiHomePage.jpeg" class="card-img-top" alt="Io sono qui">
-                      <div class="card-body">
-                        <h5 class="card-title prodotti">Io sono qui</h5>
-                        <p class="card-text prodotti">Io sono qui è un album di Claudio Baglioni, pubblicato nel 1995.</p>
-                            </div>
-                      <a href="dettaglio.html" class="stretched-link"></a>
-                    </div>
-                </div>
-                <div class="col col-md-4 col-sm">
-                    <div class="card flex-fill h-100 cardHover">
-                            <img src="img/tuttiQuiHomePage.jpeg" class="card-img-top" alt="Tutti qui">
-                            <div class="card-body">
-                                <h5 class="card-title prodotti">Tutti qui</h5>
-                                <p class="card-text prodotti">Tutti qui è una raccolta di Claudio Baglioni pubblicata nel 2005.</p>
-                            </div>
-                            <a href="dettaglio.html" class="stretched-link"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="btnCatHome">
-                <a href="catalogo.html" role="button" class="btn btn-outline-dark">Scopri il catalogo</a>
-            </div>
+        <!--FORM REGISTRAZIONE: QUESTO FORM COMPARE SE NON ESISTE IL CLIENTE-->
+        <div class="titoloPagLogin"> 
+          <h4>Crea un nuovo account</h4>
         </div>
-        <!-- BIO-->
-        <div class="container-fluid custom-bg">
-            <div class="row gy-4 gx-4">
-                <div class="col-md-4 text-center d-flex flex-column align-items-center justify-content-center">
-                    <h5>“A volte più che di un mondo nuovo, c'è bisogno di occhi nuovi per guardare il mondo.”</h5>
-                    <a href="bio.html" role="button" class="btn btn-dark btnBioHome">Scopri la bio</a>
-                </div>
-                <div class="col-md-4 text-center">
-                    <img src="img/baglioniBio1.jpg" class="custom-img" alt="Baglioni Bio">
-                </div>
-                <div class="col-md-4 text-right">
-                    <img src="img/baglioniBio2.jpg" class="custom-img" alt="Baglioni Bio">
-                </div>
+        <div class="formLogin">
+          <form class="row gy-4">
+            <div class="col-md-4">
+              <label for="inputUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="inputUsername">
             </div>
-        </div>
-        <!--GALLERY-->
-        <div class="galleryHome mx-5 my-5">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img src="img/gallery1.jpg" class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Boat on Calm Water">
-                    <img src="img/gallery4.png" class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape">
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="img/gallery5.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds">
-                    <img src="img/gallery2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water">
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="img/gallery3.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea">
-                    <img src="img/gallery6.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park">
-                </div>
+            <div class="col-md-4">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword4">
             </div>
+            <div class="col-md-4">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputNome" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="inputNome">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCognome" class="form-label">Cognome</label>
+              <input type="text" class="form-control" id="inputCognome">
+            </div>
+            <div class="col-md-4">
+              <label for="inputDataDiNascita" class="form-label">Data di nascita</label>
+              <input type="date" class="form-control" id="inputDataDiNascita">
+            </div>
+            <div class="col-md-4">
+              <label for="inputNumeroDiTelefono" class="form-label">Numero di telefono</label>
+              <input type="text" class="form-control" id="inputNumeroDiTelefono">
+            </div>
+            <div class="col-md-4">
+              <label for="inputNazione" class="form-label">Nazione</label>
+              <input type="text" class="form-control" id="inputNazione">
+            </div>
+            <div class="col-8">
+              <label for="inputIndirizzo" class="form-label">Indirizzo</label>
+              <input type="text" class="form-control" id="inputIndirizzo">
+            </div>
+            <div class="col-4">
+              <label for="inputCivico" class="form-label">Civico</label>
+              <input type="text" class="form-control" id="inputCivico">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCitta" class="form-label">Città</label>
+              <input type="text" class="form-control" id="inputCitta">
+            </div>
+            <div class="col-md-3">
+              <label for="inputProv" class="form-label">Provincia</label>
+              <input type="text" class="form-control" id="inputProv">
+            </div>
+            <div class="col-md-3">
+              <label for="inputCap" class="form-label">Cap</label>
+              <input type="text" class="form-control" id="inputCap">
+            </div>
+            <div class="col-12 btnLogin">
+              <button type="submit" class=" btn btn-outline-dark">Registrati</button>
+            </div>
+          </form>
         </div>
+
+        <!--FORM ACCESSO: QUESTO FORM COMPARE SE ESISTE IL CLIENTE-->
+        <div class="titoloPagLogin"> 
+          <h4>Accesso</h4>
+        </div>
+        <div class="formLogin">
+          <form class="row gy-4">
+            <div class="col-md-6">
+              <label for="inputUsername" class="form-label">Username</label>
+              <input type="text" class="form-control" id="inputUsername">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12 btnLogin">
+              <button type="submit" class=" btn btn-outline-dark">Accedi</button>
+            </div>
+          </form>
+        </div>
+
         <!-- FOOTER -->
         <footer class="text-center text-white bgFooterHome">
             <!-- Grid container -->
