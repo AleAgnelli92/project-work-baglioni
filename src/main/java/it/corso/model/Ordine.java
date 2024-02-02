@@ -78,3 +78,4 @@ public class Ordine {
 	public void setProdotti(List<Album> prodotti) {
 		this.albums = prodotti;
 	}
+}

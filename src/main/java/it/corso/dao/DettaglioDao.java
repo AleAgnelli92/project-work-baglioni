@@ -6,5 +6,6 @@ import it.corso.model.Dettaglio;
 
 public interface DettaglioDao extends CrudRepository<Dettaglio, Integer>
 {
-
+	
 }
+	

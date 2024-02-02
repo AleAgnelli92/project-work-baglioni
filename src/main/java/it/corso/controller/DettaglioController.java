@@ -5,7 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import it.corso.model.Album;
 import it.corso.service.AlbumService;
+
 
 // localhost:8080/dettaglio_album_prova
 @Controller
@@ -20,7 +23,9 @@ public class DettaglioController
 			@RequestParam("id") int id,
 			Model model)
 	{
-		model.addAttribute("album", albumService.getAlbumById(id));
+		Album album = albumService.getAlbumById(id);
+		model.addAttribute("album", album);
+		model.addAttribute("dettagli", album.getDettagli());
 		return "dettaglio_album_prova";
 	}
 }

@@ -28,7 +28,12 @@
 						class="img-thumbnail" alt="libro"
 						style="width:160px;max-width:160px;height:180px;max-height:180px;">
 				</div>
+			
+				<div th:each="brano : ${dettagli}">
+					<h5 th:text="'Titolo: ' + ${brano.brano}"></h5>
+					<h5 th:text="'Durata: ' + ${brano.durata}"></h5>
+				</div>
+				<!--  <h5 th:each="brano : ${dettagli}" th:text="'Titolo: ' + ${brano.brano} +', Durata: ' + ${brano.durata}"></h5>-->
 			</div>
-		</div>
 	</body>
 </html>
