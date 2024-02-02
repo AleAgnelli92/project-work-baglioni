@@ -169,6 +169,7 @@ a.cardHover:visited {
 }
 
 /* LOGIN */
+
 .divImgLogin {
     border: none !important;
     background-color: white !important;
@@ -209,6 +210,7 @@ a.cardHover:visited {
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 10px;
+    
 }
 
 .btnLogin {
@@ -217,3 +219,245 @@ a.cardHover:visited {
     align-items: center;
     margin-top: 20px;
 }
+
+/* CARRELLO */
+.divImgCarrello {
+    border: none !important;
+    background-color: white !important;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+@media (max-width: 560px) {
+    .divImgCarrello {
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 350px) {
+    .divImgCarrello {
+        height: 100px !important;
+    }
+}
+
+.imgCarrello {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.titoloCarrello {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.rowTabella {
+    margin-left: 20px !important;
+    margin-top: 10px !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-thumbnail {
+    width: 100px;
+    height: 100px;
+}
+
+.colTitoloPrezzoCarrello h5, .colTitoloPrezzoCarrello p {
+    margin-bottom: 0;
+}
+
+.colTitoloPrezzoCarrello p {
+    font: 12px !important;
+    margin-top: 5px;
+}
+
+.colQuantitaCarrello p {
+    margin-bottom: 0;
+}
+
+.cestinoCarrello {
+    background-color: white !important;
+    border: 2px solid transparent;
+}
+.cestinoCarrello:hover {
+    color: black !important;
+    border: 2px solid black;
+    
+}
+
+.rowIndirizzo {
+    margin-left: 20px !important;
+    margin-top: 20px !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.colonnaPagamento {
+    background-color: #f0f0f0;
+    padding: 20px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.payPal {
+    width: 50%;
+    height: auto;
+    margin: 30px;
+}
+
+.totalePagamento {
+    margin-bottom: 0 !important;
+}
+
+.btnPayPal {
+    margin-top: 10px;
+}
+
+.btnPayPal:hover {
+    background-color: white !important;
+    color: black !important;
+}
+
+/*CATALOGO*/
+.catalogo-album{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .cardalbum {
+    width: 250px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .cardalbum-img-top {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+  }
+  
+  .cardalbum-body {
+    padding: 15px;
+  }
+  
+  .cardalbum-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .cardalbum-text {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .cardalbum-hover {
+    text-decoration: none;
+    color: inherit;
+  }
+
+.divImgCatalogo {
+    border: none !important;
+    background-color: white !important;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 560px) {
+    .divImgCatalogo {
+        height: 200px !important;
+    }
+}
+@media (max-width: 350px) {
+    .divImgCatalogo {
+        height: 100px !important;
+    }
+}
+.imgCatalogo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* BIO */
+.divBio {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    justify-content: center;
+    margin: 0;
+    padding: 0; 
+}   
+
+.descrizioneBio {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paragrafoBio p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.paragrafoBio {
+    text-align: justify;
+    padding: 20px; 
+    margin-top: 0;
+    margin-bottom: 5px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.immagine {
+    width: 33.33%;
+    height: auto;
+}
+
+.divImgBio {
+    border: none !important;
+    background-color: white !important;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+@media (max-width: 560px) {
+    .divImgBio {
+        height: 200px !important;
+    }
+}
+@media (max-width: 350px) {
+    .divImgBio {
+        height: 100px !important;
+    }
+}
+.imgBio {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

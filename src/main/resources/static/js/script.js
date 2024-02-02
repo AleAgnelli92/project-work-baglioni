@@ -1,4 +1,4 @@
-const navHome = document.querySelector('.navbar')
+const navHome = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY >= 56) {
@@ -7,3 +7,6 @@ window.addEventListener('scroll', () => {
         navHome.classList.remove('navbar-scrolled')
     }
 })
+
+  
+

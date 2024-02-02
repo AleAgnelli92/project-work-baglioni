@@ -25,16 +25,16 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="homepage.html">Home</a>
+                    <a class="nav-link" aria-current="page" href="homepage.html">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" href="bio.html">Bio</a>
+                    <a class="nav-link text-secondary active" href="bio.html">Bio</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link text-secondary" href="catalogo.html">Catalogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="icon-link text-secondary" href="login.html">
+                    <a class="icon-link text-secondary active" href="login.html">
                       <i class='far fa-user-circle'></i>
                     </a>
                   </li>
@@ -48,92 +48,53 @@
             </div>
         </nav>
         <!--IMG-->
-        <div class="card text-bg-dark imgHome">
-            <img src="img/baglioniHome.jpg" class="card-img" alt="Baglioni Home">
-            <div class="card-img-overlay centered">
-                <p class="card-text"><small>So long,</small></p>
-                <h5 class="card-title">Claudio</h5>
+        <div class="text-bg-dark divImgBio">
+          <img src="img/baglioniPagBio.png" class="imgBio img-fluid" alt="Baglioni Bio">
+      </div>
+        <!--BIO-->
+        <div class="divBio">
+            <div class="descrizioneBio">
+                <h4><b>Biografia</b></h4>
             </div>
+            <div class="paragrafoBio">
+              <p>Claudio Baglioni è nato il 16 maggio 1951 a Roma, Italia. Fin da giovane ha dimostrato una forte inclinazione per la musica, apprendendo a suonare la chitarra da autodidatta e iniziando a comporre canzoni.
+                Ha debuttato nel mondo della musica negli anni '70, quando ha vinto il concorso musicale "Un disco per l'estate" con la canzone "Un po' di più". Il suo primo album, "Claudio Baglioni",
+                è stato pubblicato nel 1970. Tuttavia, è con l'album successivo, "Questo piccolo grande amore" (1972),
+                che ha ottenuto un grande successo, contribuendo a definire il suo stile unico nel panorama della canzone d'autore italiana. L'album conteneva la celebre canzone omonima, che divenne un classico della musica italiana. Nel corso della sua carriera,
+                Claudio Baglioni ha pubblicato numerosi album di successo,
+                tra cui "E tu..." (1974), "Sabato pomeriggio" (1975), e "Strada facendo" (1981).
+              </p>
+            </div>
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-sm-4">
+                  <img src="img/galleryBio1.png" alt="Baglioni Bio" class="img-fluid">
+                </div>
+                <div class="col-sm-4">
+                  <img src="img/galleryBio2.jpg" alt="Baglioni Bio" class="img-fluid">
+                </div>
+                <div class="col-sm-4">
+                  <img src="img/galleryBio3.jpg" alt="Baglioni Bio" class="img-fluid">
+                </div>
+              </div>
+            </div>
+            <div class="paragrafoBio">
+            <p>Le sue canzoni spesso affrontano temi romantici, sociali e politici, dimostrando una profonda sensibilità artistica. Oltre alla sua carriera musicale, Baglioni ha sperimentato il mondo della recitazione, partecipando a film e spettacoli televisivi.
+                Nel 1999 è stato anche conduttore del Festival di Sanremo, consolidando ulteriormente la sua presenza nell'intrattenimento italiano. Nel corso degli anni, Claudio Baglioni ha continuato a rinnovarsi, esplorando nuovi generi musicali e collaborando con altri artisti.
+                La sua musica è rimasta popolare nel tempo, guadagnandosi il rispetto sia del pubblico che della critica. La sua influenza nella musica italiana è stata enorme, e Claudio Baglioni è considerato uno dei più grandi cantautori del paese. La sua carriera di successo,
+                la sua voce distintiva e la sua capacità di toccare il cuore delle persone attraverso la musica lo rendono un'icona della cultura musicale italiana.</p>
+            </div>
+          
+
         </div>
-        <!--CATALOGO-->
-        <div class="catalogoHome mx-5">
-            <div class="titoloCatalogoHome">
-                <h4>Catalogo</h4>
-            </div>
-            <div class="row row-cols-auto gy-4 gx-4">
-                <div class="col col-md-4 col-sm">
-                      <div class="card flex-fill h-100 cardHover">
-                              <img src="img/eTuHomePage.jpeg" class="card-img-top" alt="E tu...">
-                              <div class="card-body">
-                                  <h5 class="card-title prodotti">E tu...</h5>
-                                  <p class="card-text prodotti">Il quinto album di Claudio Baglioni, pubblicato nel 1974.</p>
-                              </div>
-                              <a href="dettaglio.html" class="stretched-link"></a>
-                      </div>
-                </div>
-                <div class="col col-md-4 col-sm">
-                    <div class="card flex-fill h-100 cardHover">
-                      <img src="img/ioSonoQuiHomePage.jpeg" class="card-img-top" alt="Io sono qui">
-                      <div class="card-body">
-                        <h5 class="card-title prodotti">Io sono qui</h5>
-                        <p class="card-text prodotti">Io sono qui è un album di Claudio Baglioni, pubblicato nel 1995.</p>
-                            </div>
-                      <a href="dettaglio.html" class="stretched-link"></a>
-                    </div>
-                </div>
-                <div class="col col-md-4 col-sm">
-                    <div class="card flex-fill h-100 cardHover">
-                            <img src="img/tuttiQuiHomePage.jpeg" class="card-img-top" alt="Tutti qui">
-                            <div class="card-body">
-                                <h5 class="card-title prodotti">Tutti qui</h5>
-                                <p class="card-text prodotti">Tutti qui è una raccolta di Claudio Baglioni pubblicata nel 2005.</p>
-                            </div>
-                            <a href="dettaglio.html" class="stretched-link"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="btnCatHome">
-                <a href="catalogo.html" role="button" class="btn btn-outline-dark">Scopri il catalogo</a>
-            </div>
-        </div>
-        <!-- BIO-->
-        <div class="container-fluid custom-bg">
-            <div class="row gy-4 gx-4">
-                <div class="col-md-4 text-center d-flex flex-column align-items-center justify-content-center">
-                    <h5>“A volte più che di un mondo nuovo, c'è bisogno di occhi nuovi per guardare il mondo.”</h5>
-                    <a href="bio.html" role="button" class="btn btn-dark btnBioHome">Scopri la bio</a>
-                </div>
-                <div class="col-md-4 text-center">
-                    <img src="img/baglioniBio1.jpg" class="custom-img" alt="Baglioni Bio">
-                </div>
-                <div class="col-md-4 text-right">
-                    <img src="img/baglioniBio2.jpg" class="custom-img" alt="Baglioni Bio">
-                </div>
-            </div>
-        </div>
-        <!--GALLERY-->
-        <div class="galleryHome mx-5 my-5">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img src="img/gallery1.jpg" class="w-100 shadow-1-strong rounded mb-4"
-                        alt="Boat on Calm Water">
-                    <img src="img/gallery4.png" class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape">
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="img/gallery5.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds">
-                    <img src="img/gallery2.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water">
-                </div>
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="img/gallery3.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea">
-                    <img src="img/gallery6.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park">
-                </div>
-            </div>
-        </div>
+        
         <!-- FOOTER -->
         <footer class="text-center text-white bgFooterHome">
             <!-- Grid container -->
             <div class="container">
-            
+             
+              <!-- Section: Links -->
+        
               <hr class="my-4" />
         
               <!-- Section: Text -->
