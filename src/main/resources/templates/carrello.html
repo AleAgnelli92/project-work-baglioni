@@ -9,12 +9,15 @@
 		<ul>
 			<li th:each="album : ${albumNelCarrello}">
 				<span th:text="'Titolo: ' + ${album.titolo}"></span>
-				<br>
+				
 				<span th:text="'Prezzo: ' + ${album.prezzo}"></span>
+				
+				<a th:href="@{'/carrello/rimuovi?id=' + ${album.id}}" class="btn btn-primary">Elimina prodotto</a>
 			</li>
 			
 		</ul>
 
 		<a th:href="@{/catalogo}">Torna a catalogo</a>
+		<a th:href="@{/login}">Login</a>
 	</body>
 </html>

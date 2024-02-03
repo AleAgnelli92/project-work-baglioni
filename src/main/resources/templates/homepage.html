@@ -25,21 +25,21 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="homepage">Home</a>
+                    <a th:href="@{/}" class="nav-link active" aria-current="page">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" href="bio">Bio</a>
+                    <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
                   </li>
                   <li class="nav-item">
-                    <a th:href="@{/catalogo}" class="nav-link text-secondary" href="catalogo">Catalogo</a>
+                    <a th:href="@{/catalogo}" class="nav-link text-secondary">Catalogo</a>
                   </li>
                   <li class="nav-item">
-                    <a th:href="@{/login}" class="icon-link text-secondary" href="login">
+                    <a th:href="@{/login}" class="icon-link text-secondary">
                       <i class='far fa-user-circle'></i>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a th:href="@{/carrello}" class="icon-link text-secondary" href="carrello">
+                    <a th:href="@{/carrello}" class="icon-link text-secondary">
                       <i class='fas fa-shopping-bag'></i>
                     </a>
                   </li>
@@ -68,7 +68,7 @@
                                   <h5 class="card-title prodotti">E tu...</h5>
                                   <p class="card-text prodotti">Il quinto album di Claudio Baglioni, pubblicato nel 1974.</p>
                               </div>
-                              <a href="dettaglio" class="stretched-link"></a>
+                              <a href="dettaglio?id=30" class="stretched-link"></a>
                       </div>
                 </div>
                 <div class="col col-md-4 col-sm">
@@ -78,7 +78,7 @@
                         <h5 class="card-title prodotti">Io sono qui</h5>
                         <p class="card-text prodotti">Io sono qui è un album di Claudio Baglioni, pubblicato nel 1995.</p>
                             </div>
-                      <a href="dettaglio" class="stretched-link"></a>
+                      <a href="dettaglio?id=20" class="stretched-link"></a>
                     </div>
                 </div>
                 <div class="col col-md-4 col-sm">
@@ -88,7 +88,7 @@
                                 <h5 class="card-title prodotti">Tutti qui</h5>
                                 <p class="card-text prodotti">Tutti qui è una raccolta di Claudio Baglioni pubblicata nel 2005.</p>
                             </div>
-                            <a href="dettaglio" class="stretched-link"></a>
+                            <a href="dettaglio?id=11" class="stretched-link"></a>
                     </div>
                 </div>
             </div>

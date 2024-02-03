@@ -70,13 +70,14 @@
     <div class="titoloCatalogoHome">
       <h4>Catalogo</h4>
     </div>
-    <div class="catalogo-album">
+    <div class="catalogo-album" th:each="album : ${albums}">
         <div class="cardalbum">
-            <img src="img/eTuHomePage.jpeg" class="cardalbum-img-top" alt="Album Cover">
+            <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="cardalbum-img-top" alt="Album Cover">
             <div class="cardalbum-body">
-                <h5 class="cardalbum-title">E tu...</h5>
-                <p class="cardalbum-text">Quinto album di Claudio Baglioni, pubblicato nel 1974</p>
-                <a href="dettaglio" role="button" class="btn btn-outline-dark">+</a>
+                <h5 class="cardalbum-title"></h5>
+                <p class="cardalbum-text" th:text="${album.titolo} + ' - ' + 'Pubblicato nel ' + ${album.anno}"></p>
+                <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark" th:text="'+'"></a>
+                <a th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark" th:text="'Acquista'"></a>
             </div>
         </div>
     </div>

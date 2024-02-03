@@ -40,4 +40,23 @@ public class CarrelloController {
 		return "redirect:/carrello";
 	}
 
+	@SuppressWarnings("unchecked")
+	@GetMapping("/rimuovi")
+	public String rimuoviAlbum(@RequestParam("id") int id, HttpSession session) {
+	    List<Album> carrello = (List<Album>) session.getAttribute("carrello");
+	    if (carrello != null) {
+	        int indexToRemove = -1;
+	        for (int i = 0; i < carrello.size(); i++) {
+	            if (carrello.get(i).getId() == id) {
+	                indexToRemove = i;
+	                break; 
+	            }
+	        }
+	        if (indexToRemove != -1) {
+	            carrello.remove(indexToRemove);
+	        }
+	    }
+	    session.setAttribute("carrello", carrello);
+	    return "redirect:/carrello";
+	}
 }
