@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Area Riservata</title>
+	</head>
+	<body>
+		<h1 th:text="'Benvenuto nella tua area riservata ' + ${username}"></h1>
+		<a th:href="@{/homepage}">Torna in Home Page</a>
+	</body>
+</html>

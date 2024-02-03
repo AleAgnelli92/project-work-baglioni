@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html  xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
@@ -34,25 +34,25 @@
                 <ul class="navbar-nav ms-auto me-4">
 
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" aria-current="page" href="homepage.html">Home</a>
+                        <a class="nav-link text-secondary" aria-current="page" href="homepage">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="bio.html">Bio</a>
+                        <a class="nav-link text-secondary" href="bio">Bio</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link active" href="catalogo.html">Catalogo</a>
+                        <a th:href="@{/catalogo}"  class="nav-link active" href="catalogo">Catalogo</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="icon-link text-secondary" href="login.html">
+                        <a th:href="@{/login}"  class="icon-link text-secondary" href="login">
                             <i class='far fa-user-circle'></i>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="icon-link text-secondary" href="carrello.html">
+                        <a th:href="@{/carrello}" class="icon-link text-secondary" href="carrello">
                             <i class='fas fa-shopping-bag'></i>
                         </a>
                     </li>
@@ -76,7 +76,7 @@
             <div class="cardalbum-body">
                 <h5 class="cardalbum-title">E tu...</h5>
                 <p class="cardalbum-text">Quinto album di Claudio Baglioni, pubblicato nel 1974</p>
-                <a href="dettaglio.html" role="button" class="btn btn-outline-dark">+</a>
+                <a href="dettaglio" role="button" class="btn btn-outline-dark">+</a>
             </div>
         </div>
     </div>

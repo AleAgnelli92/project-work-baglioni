@@ -2,14 +2,19 @@ package it.corso.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Cliente;
 import it.corso.service.ClienteService;
+import jakarta.servlet.http.HttpSession;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+// localhost:8080/login
 @Controller
 @RequestMapping("/login")
 public class LoginController {
@@ -18,15 +23,32 @@ public class LoginController {
 	private ClienteService clienteService;
 	
 	@GetMapping
-    public String login() {
-        return "login";
-    }
+	public String getPage(HttpSession session, Model model) {
+	    if (session.getAttribute("cliente") != null)
+	        return "redirect:/personale";
+	    
+	    model.addAttribute("cliente", new Cliente()); 
+	    return "login";
+	}
 	
-	@PostMapping
-	public String formManager(@ModelAttribute("cliente") Cliente cliente)
-	{
-		clienteService.registrazioneCliente(cliente);
+	
+	@PostMapping("/controllo")
+	public String loginManager(@RequestParam("username") String username,
+							  @RequestParam("password") String password,
+							  HttpSession session) { 
+		
+		if(!clienteService.controlloLogin(username, password, session))
+			return "redirect:/login";
+		
 		return "redirect:/personale";
 	}
-
+	
+	
+	@PostMapping
+	public String formManager(@ModelAttribute("cliente") Cliente cliente) {
+		
+		clienteService.registrazioneCliente(cliente);
+		return "redirect:/login";
+	}
+	
 }

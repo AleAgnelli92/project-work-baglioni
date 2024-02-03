@@ -1,5 +1,7 @@
 package it.corso.model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -102,8 +104,13 @@ public class Cliente {
 	public Date getData_di_nascita() {
 		return data_di_nascita;
 	}
-	public void setData_di_nascita(Date data_di_nascita) {
-		this.data_di_nascita = data_di_nascita;
+	public void setData_di_nascita(String data_di_nascita) {
+		try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            this.data_di_nascita = sdf.parse(data_di_nascita);
+        } catch (ParseException e) {
+            e.printStackTrace(); 
+        }
 	}
 	public String getNumero_di_telefono() {
 		return numero_di_telefono;

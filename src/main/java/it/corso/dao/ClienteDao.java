@@ -6,5 +6,5 @@ import it.corso.model.Cliente;
 
 public interface ClienteDao extends CrudRepository<Cliente, Integer>
 {
-	
+	Cliente findByUsernameAndPassword(String username, String password);
 }

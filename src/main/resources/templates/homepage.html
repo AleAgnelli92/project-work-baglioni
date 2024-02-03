@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,21 +25,21 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="homepage.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="homepage">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" href="bio.html">Bio</a>
+                    <a class="nav-link text-secondary" href="bio">Bio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" href="catalogo.html">Catalogo</a>
+                    <a th:href="@{/catalogo}" class="nav-link text-secondary" href="catalogo">Catalogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="icon-link text-secondary" href="login.html">
+                    <a th:href="@{/login}" class="icon-link text-secondary" href="login">
                       <i class='far fa-user-circle'></i>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="icon-link text-secondary" href="carrello.html">
+                    <a th:href="@{/carrello}" class="icon-link text-secondary" href="carrello">
                       <i class='fas fa-shopping-bag'></i>
                     </a>
                   </li>
@@ -68,7 +68,7 @@
                                   <h5 class="card-title prodotti">E tu...</h5>
                                   <p class="card-text prodotti">Il quinto album di Claudio Baglioni, pubblicato nel 1974.</p>
                               </div>
-                              <a href="dettaglio.html" class="stretched-link"></a>
+                              <a href="dettaglio" class="stretched-link"></a>
                       </div>
                 </div>
                 <div class="col col-md-4 col-sm">
@@ -78,7 +78,7 @@
                         <h5 class="card-title prodotti">Io sono qui</h5>
                         <p class="card-text prodotti">Io sono qui è un album di Claudio Baglioni, pubblicato nel 1995.</p>
                             </div>
-                      <a href="dettaglio.html" class="stretched-link"></a>
+                      <a href="dettaglio" class="stretched-link"></a>
                     </div>
                 </div>
                 <div class="col col-md-4 col-sm">
@@ -88,12 +88,12 @@
                                 <h5 class="card-title prodotti">Tutti qui</h5>
                                 <p class="card-text prodotti">Tutti qui è una raccolta di Claudio Baglioni pubblicata nel 2005.</p>
                             </div>
-                            <a href="dettaglio.html" class="stretched-link"></a>
+                            <a href="dettaglio" class="stretched-link"></a>
                     </div>
                 </div>
             </div>
             <div class="btnCatHome">
-                <a href="catalogo.html" role="button" class="btn btn-outline-dark">Scopri il catalogo</a>
+                <a href="catalogo" role="button" class="btn btn-outline-dark">Scopri il catalogo</a>
             </div>
         </div>
         <!-- BIO-->
@@ -101,7 +101,7 @@
             <div class="row gy-4 gx-4">
                 <div class="col-md-4 text-center d-flex flex-column align-items-center justify-content-center">
                     <h5>“A volte più che di un mondo nuovo, c'è bisogno di occhi nuovi per guardare il mondo.”</h5>
-                    <a href="bio.html" role="button" class="btn btn-dark btnBioHome">Scopri la bio</a>
+                    <a href="bio" role="button" class="btn btn-dark btnBioHome">Scopri la bio</a>
                 </div>
                 <div class="col-md-4 text-center">
                     <img src="img/baglioniBio1.jpg" class="custom-img" alt="Baglioni Bio">

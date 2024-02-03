@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,84 +61,99 @@
           <h4>Crea un nuovo account</h4>
         </div>
         <div class="formLogin">
-          <form class="row gy-4">
+          <form class="row gy-4" method="post" th:object="${cliente}">
             <div class="col-md-4">
-              <label for="inputUsername" class="form-label">Username</label>
-              <input type="text" class="form-control" id="inputUsername" required>
+              <label for="username" class="form-label">Username</label>
+              <input type="text" th:field="*{username}" class="form-control" id="username" required>
             </div>
+            
             <div class="col-md-4">
-              <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" required>
+              <label for="password" class="form-label">Password</label>
+              <input type="password"  th:field="*{password}" class="form-control" id="ipassword" required>
             </div>
+            
             <div class="col-md-4">
-              <label for="inputEmail4" class="form-label">Email</label>
-              <input type="email" class="form-control" id="inputEmail4"required>
+              <label for="email" class="form-label">Email</label>
+              <input type="email" th:field="*{email}" class="form-control" id="email" required>
             </div>
+            
             <div class="col-md-6">
-              <label for="inputNome" class="form-label">Nome</label>
-              <input type="text" class="form-control" id="inputNome" required>
+              <label for="nome" class="form-label">Nome</label>
+              <input type="text" th:field="*{nome}" class="form-control" id="nome" required>
             </div>
+            
             <div class="col-md-6">
-              <label for="inputCognome" class="form-label">Cognome</label>
-              <input type="text" class="form-control" id="inputCognome" required>
+              <label for="cognome" class="form-label">Cognome</label>
+              <input type="text" th:field="*{cognome}" class="form-control" id="cognome" required>
             </div>
+            
             <div class="col-md-4">
-              <label for="inputDataDiNascita" class="form-label">Data di nascita</label>
-              <input type="date" class="form-control" id="inputDataDiNascita" required>
+              <label for="data_di_nascita" class="form-label">Data di nascita</label>
+              <input type="date" th:field="*{data_di_nascita}" class="form-control" id="data_di_nascita">
             </div>
+            
             <div class="col-md-4">
-              <label for="inputNumeroDiTelefono" class="form-label">Numero di telefono</label>
-              <input type="text" class="form-control" id="inputNumeroDiTelefono">
+              <label for="numero_di_telefono" class="form-label">Numero di telefono</label>
+              <input type="text" th:field="*{numero_di_telefono}" class="form-control" id="numero_di_telefono">
             </div>
+            
             <div class="col-md-4">
-              <label for="inputNazione" class="form-label">Nazione</label>
-              <input type="text" class="form-control" id="inputNazione" required>
+              <label for="nazione" class="form-label">Nazione</label>
+              <input type="text" th:field="*{nazione}" class="form-control" id="nazione" required>
             </div>
+            
             <div class="col-8">
-              <label for="inputIndirizzo" class="form-label">Indirizzo</label>
-              <input type="text" class="form-control" id="inputIndirizzo" required>
+              <label for="indirizzo" class="form-label">Indirizzo</label>
+              <input type="text" th:field="*{indirizzo}" class="form-control" id="indirizzo" required>
             </div>
+            
             <div class="col-4">
-              <label for="inputCivico" class="form-label">Civico</label>
-              <input type="text" class="form-control" id="inputCivico" required>
+              <label for="civico" class="form-label">Civico</label>
+              <input type="text" th:field="*{civico}" class="form-control" id="civico" required>
             </div>
+            
             <div class="col-md-6">
-              <label for="inputCitta" class="form-label">Città</label>
-              <input type="text" class="form-control" id="inputCitta" required>
+              <label for="citta" class="form-label">Città</label>
+              <input type="text" th:field="*{citta}" class="form-control" id="citta" required>
             </div>
+            
             <div class="col-md-3">
-              <label for="inputProv" class="form-label">Provincia</label>
-              <input type="text" class="form-control" id="inputProv" required>
+              <label for="provincia" class="form-label">Provincia</label>
+              <input type="text" th:field="*{provincia}" class="form-control" id="provincia" required>
             </div>
+            
             <div class="col-md-3">
-              <label for="inputCap" class="form-label">Cap</label>
-              <input type="text" class="form-control" id="inputCap" required>
+              <label for="cap" class="form-label">Cap</label>
+              <input type="text" th:field="*{cap}" class="form-control" id="cap" required>
             </div>
+            
             <div class="col-12 btnLogin">
-              <button type="submit" class=" btn btn-outline-dark">Registrati</button>
+              <button type="submit" value="Registrati" class=" btn btn-outline-dark">Registrati</button>
             </div>
           </form>
         </div>
 
-        <!--FORM ACCESSO: QUESTO FORM COMPARE SE ESISTE IL CLIENTE-->
+
+       <!--FORM ACCESSO: QUESTO FORM COMPARE SE ESISTE IL CLIENTE-->
         <div class="titoloPagLogin"> 
           <h4>Accesso</h4>
         </div>
         <div class="formLogin">
-          <form class="row gy-4">
+          <form class="row gy-4" action="login/controllo" method="post">
             <div class="col-md-6">
-              <label for="inputUsername" class="form-label">Username</label>
-              <input type="text" class="form-control" id="inputUsername">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" id="username" required>
             </div>
             <div class="col-md-6">
-              <label for="inputPassword4" class="form-label">Password</label>
-              <input type="password" class="form-control" id="inputPassword4">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="password" required>
             </div>
             <div class="col-12 btnLogin">
-              <button type="submit" class=" btn btn-outline-dark">Accedi</button>
+              <button type="submit" value="Accedi" class=" btn btn-outline-dark">Accedi</button>
             </div>
           </form>
         </div>
+
 
         <!-- FOOTER -->
         <footer class="text-center text-white bgFooterHome">

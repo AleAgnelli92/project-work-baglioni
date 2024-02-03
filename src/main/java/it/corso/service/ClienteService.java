@@ -1,10 +1,14 @@
 package it.corso.service;
 
 import it.corso.model.Cliente;
+import jakarta.servlet.http.HttpSession;
 
 public interface ClienteService {
 
+	boolean controlloLogin(String username, String password, HttpSession session);
+
 	void registrazioneCliente(Cliente cliente);
-	void cancellazioneCliente(Cliente cliente);
-	Cliente getClienteById(int id);
+
+	Cliente getClienteById(Integer id);
+
 }
