@@ -1,10 +1,10 @@
 package it.corso.model;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -34,7 +34,8 @@ public class Cliente {
 	@Column
     private String password;
 	@Column
-    private Date data_di_nascita;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private LocalDate data_di_nascita;
 	@Column
     private String numero_di_telefono;
 	@Column
@@ -101,17 +102,13 @@ public class Cliente {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Date getData_di_nascita() {
+	public LocalDate getData_di_nascita() {
 		return data_di_nascita;
 	}
-	public void setData_di_nascita(String data_di_nascita) {
-		try {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            this.data_di_nascita = sdf.parse(data_di_nascita);
-        } catch (ParseException e) {
-            e.printStackTrace(); 
-        }
-	}
+	public void setData_di_nascita(LocalDate data_di_nascita) {
+		this.data_di_nascita = data_di_nascita;
+	}	
+	
 	public String getNumero_di_telefono() {
 		return numero_di_telefono;
 	}
@@ -133,6 +130,7 @@ public class Cliente {
 	public String getIndirizzo() {
 		return indirizzo;
 	}
+	
 	public void setIndirizzo(String indirizzo) {
 		this.indirizzo = indirizzo;
 	}

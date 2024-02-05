@@ -34,6 +34,7 @@ public class ClienteServiceImpl implements ClienteService {
 
 	@Override
 	public Cliente getClienteById(Integer id) {
+		
 		Optional<Cliente> clienteOptional = clienteDao.findById(id);
 		if(clienteOptional.isPresent())
 			return clienteOptional.get();
@@ -41,3 +42,4 @@ public class ClienteServiceImpl implements ClienteService {
 	}
 
 }
+

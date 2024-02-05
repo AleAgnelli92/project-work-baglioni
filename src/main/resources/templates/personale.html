@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html  xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +16,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
     </head>
     <body>
-
+    
+		<!-- CODICE CORRETTO -->
         <!--NAVBAR-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
           <div class="container-fluid elementiNav">
@@ -26,21 +27,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto me-4">
                 <li class="nav-item">
-                  <a class="nav-link text-secondary" th:href="@{/}">Home</a>
+                  <a th:href="@{/}" class="nav-link text-secondary" >Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-secondary" th:href="@{/bio}">Bio</a>
+                  <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-secondary" th:href="@{/catalogo}">Catalogo</a>
+                  <a th:href="@{/catalogo}" class="nav-link text-secondary" >Catalogo</a>
                 </li>
                 <li class="nav-item">
-                  <a class="icon-link active nav-link" th:href="@{/login}" aria-current="page">
+                  <a class="icon-link active nav-link" href="login" aria-current="page">
                     <i class='far fa-user-circle'></i>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="icon-link text-secondary" th:href="@{/carrello}">
+                  <a th:href="@{/carrello}" class="icon-link text-secondary" href="carrello">
                     <i class='fas fa-shopping-bag'></i>
                   </a>
                 </li>
@@ -52,81 +53,100 @@
         <div class="text-bg-dark divImgLogin">
             <img src="img/areaPersonale.jpg" class="imgLogin img-fluid" alt="Baglioni Area Personale">
         </div>
+        
+        <!--Testo di benvenuto-->
+        <h1 th:text="'Benvenuto nella tua area riservata ' + ${username}"></h1>
+		
+		
         <!--FORM DISABILITATO -->
         <div class="container-fluid">
             <div class="row">
                 <div class="formDati col-md-6">
                     <div class="titoloPersonale row"> 
                         <h4 class="col-md-10">I miei dati</h4>
-                        <a class="logOutIcon col-md-2" th:href="@{/login/logout}">
+                        <a class="logOutIcon col-md-2" href="#">
                             <i class='fas fa-sign-out-alt'></i>
                           </a>
                       </div>
-                    <form role="form">
-                      <!--TUTTI I PLACEHOLDER DEVONO ESSERE GESTITI DA THYMELEAF-->
-                      <!--SE CLICCO SUL TASTO MODIFICA, IL DISABLED SPARISCE-->
+                      
+                    <form role="form" th:object="${cliente}" method="post">
+                    
                       <div class="form-group">
-                        <label for="inputUsernameR" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="inputUsernameR" th:placeholder="AleAgne92" disabled> 
+         
+		              	<label for="username" class="form-label">Username</label>
+		             	 <input type="text" th:field="*{username}" class="form-control" id="username" required>
+		              </div>
+		              
+                      <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" th:field="*{password}" class="form-control" id="password" >
+                      </div>
+                      
+                      <div class="form-group">
+	                    <label for="email" class="form-label">Email</label>
+	              		<input type="email" th:field="*{email}" class="form-control" id="email" required> 
+              		</div>
+                      
+                      <div class="form-group">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" th:field="*{nome}" class="form-control" id="nome" >
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="cognome" class="form-label">Cognome</label>
+                        <input type="text" th:field="*{cognome}"  class="form-control" id="cognome" >
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="data_di_nascita" class="form-label">Data di nascita</label>
+                        <input type="date" th:field="*{data_di_nascita}" class="form-control" id="data_di_nascita" >
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="numero_di_telefono" class="form-label">Numero di telefono</label>
+                        <input type="text" th:field="*{numero_di_telefono}" class="form-control" id="numero_di_telefono" >
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="nazione" class="form-label">Nazione</label>
+                        <input type="text" th:field="*{nazione}" class="form-control" id="nazione" >
+                      </div>
+                      
+                      <div class="form-group">
+                        <label for="indirizzo" class="form-label">Indirizzo</label>
+                        <input type="text" th:field="*{indirizzo}"  class="form-control" id="indirizzo" >
                       </div>
                       <div class="form-group">
-                        <label for="inputPasswordR" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="inputPasswordR" disabled>
+                        <label for="civico" class="form-label">Civico</label>
+                        <input type="text" th:field="*{civico}" class="form-control" id="civico">
                       </div>
                       <div class="form-group">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="aleagnelli92@gmail.com" disabled>
+                        <label for="citta" class="form-label">Città</label>
+                        <input type="text" th:field="*{citta}" class="form-control" id="citta" >
                       </div>
+                      
                       <div class="form-group">
-                        <label for="inputNome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="inputNome" placeholder="Alessandra" disabled>
+                        <label for="provincia" class="form-label">Provincia</label>
+                        <input type="text" th:field="*{provincia}"  class="form-control" id="provincia" >
                       </div>
+                      
                       <div class="form-group">
-                        <label for="inputCognome" class="form-label">Cognome</label>
-                        <input type="text" class="form-control" id="inputCognome" placeholder="Agnelli" disabled>
+                        <label for="cap" class="form-label">Cap</label>
+                        <input type="text" th:field="*{cap}" class="form-control" id="inputCap" >
                       </div>
-                      <div class="form-group">
-                        <label for="inputDataDiNascita" class="form-label">Data di nascita</label>
-                        <input type="date" class="form-control" id="inputDataDiNascita" placeholder="17/06/1992" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputNumeroDiTelefono" class="form-label">Numero di telefono</label>
-                        <input type="text" class="form-control" id="inputNumeroDiTelefono" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputNazione" class="form-label">Nazione</label>
-                        <input type="text" class="form-control" id="inputNazione" placeholder="Italia" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputIndirizzo" class="form-label">Indirizzo</label>
-                        <input type="text" class="form-control" id="inputIndirizzo" placeholder="Via Pascoli" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputCivico" class="form-label">Civico</label>
-                        <input type="text" class="form-control" id="inputCivico" placeholder="31" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputCitta" class="form-label">Città</label>
-                        <input type="text" class="form-control" id="inputCitta" placeholder="Bardello" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputProv" class="form-label">Provincia</label>
-                        <input type="text" class="form-control" id="inputProv" placeholder="VA" disabled>
-                      </div>
-                      <div class="form-group">
-                        <label for="inputCap" class="form-label">Cap</label>
-                        <input type="text" class="form-control" id="inputCap" placeholder="21020" disabled>
-                      </div>
+                      
+                      
+                      
                       <!--QUESTO BUTTON DEVE COMPARIRE SOLO QUANDO STO MODIFICANDO, PER INVIARE I DATI AGGIORNATI-->
                       <div class="col-12 btnLogin">
-                        <button type="submit" class=" btn btn-outline-dark">Registrati</button>
+                        <input type="submit" value = "Modifica" class=" btn btn-outline-dark">
                       </div>
-                      <!--QUESTO è IL BUTTON DELLA MODIFICA-->
-                      <div class="btnPersonale">
-                          <a href="catalogo.html" role="button" class="btn btn-outline-dark">Modifica</a>
-                      </div>
+                      
+                     
                     </form>
                   </div>
+                  
+                  
                 <div class="col-md-6">
                     <div class="titoloOrdini row"> 
                         <h4 class="col-md-10">I miei ordini</h4>
@@ -194,7 +214,7 @@
             <!-- Copyright -->
             <div class="text-center p-3">
               <p><small>© 2024 Copyright:</small></p>
-              <p class="text-white"><small>Project Work Baglioni</small></p>
+              <p class="text-white"><small>Projecy Work Baglioni</small></p>
             </div>
             <!-- Copyright -->
           </footer>
@@ -209,10 +229,6 @@
         <script src="js/script.js" async defer></script>
     </body>    
 </html>
-
-
-
-
 
 
 		
