@@ -536,6 +536,41 @@ a.cardHover:visited {
     font-size: 12px;
 }
 
+/*DETTAGLIO*/
+/*IMMAGINE DETTAGLIO*/
+.divImgDettaglio {
+    border: none !important;
+    background-color: white !important;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content:space-between;
+    align-items:flex-start;
+}
+@media (max-width: 560px) {
+    .divImgDettaglio {
+        height: 200px !important;
+    }
+}
+@media (max-width: 350px) {
+    .divImgDettaglio {
+        height: 100px !important;
+    }
+}
+.imgDettaglio {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*TITOLO DETTAGLIO*/
+.titoloDettaglioHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+   
+}
 /*Brani dettaglio*/
 .BraniDettaglio{
     text-size-adjust: .1;
