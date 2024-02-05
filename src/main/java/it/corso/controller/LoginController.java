@@ -11,7 +11,6 @@ import it.corso.service.ClienteService;
 import jakarta.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 // localhost:8080/login
@@ -47,12 +46,13 @@ public class LoginController {
 	}
 	
 	
-	@PostMapping
-	public String formManager(@ModelAttribute("cliente") Cliente cliente) {
-		
-		clienteService.registrazioneCliente(cliente);
-		return "redirect:/login";
-	}
 
+	@GetMapping("/logout")
+    public String logout(HttpSession session) {
+        // Invalida la sessione
+        session.invalidate();
+
+        return "redirect:/login";
+    }
 	
 }
