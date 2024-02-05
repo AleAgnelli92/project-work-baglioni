@@ -419,6 +419,7 @@ a.cardHover:visited {
     object-fit: cover;
 }
 
+
 /* BIO */
 .divBio {
     background-color: white;
@@ -485,3 +486,15 @@ a.cardHover:visited {
     object-fit: cover;
 }
 
+/*Brani dettaglio*/
+.BraniDettaglio{
+    text-size-adjust: .1;
+}
+
+.verde{
+    color: green;
+}
+
+.rosso{
+    color: red;
+}

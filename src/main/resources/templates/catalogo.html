@@ -75,11 +75,16 @@
             <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="cardalbum-img-top" alt="Album Cover">
             <div class="cardalbum-body">
                 <h5 class="cardalbum-title"></h5>
-                <p class="cardalbum-text" th:text="${album.titolo} + ' - ' + 'Pubblicato nel ' + ${album.anno}"></p>
-                <p class="cardalbum-text" th:text="'Prezzo: '  + '€ ' + ${album.prezzo}"></p>
+                <p class="cardalbum-text" th:text="${album.titolo}"></p>
+                <p class="cardalbum-text" th:text="${album.anno}"></p>
+                <p class="cardalbum-text" th:text="'€ ' + ${album.prezzo}"></p>
                 <p class="cardalbum-text" th:text="'Pezzi disponibili: '  + ${album.quantita}"></p>
-                <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark" th:text="'+'"></a>
-                <a th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark" th:text="'Acquista'"></a>
+                <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark">
+                		<i class='fas fa-info-circle'></i>
+                	</a>
+                <a th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
+                		<i class='fas fa-shopping-bag'></i>
+                </a>
             </div>
         </div>
     </div>
