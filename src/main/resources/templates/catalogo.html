@@ -34,25 +34,25 @@
                 <ul class="navbar-nav ms-auto me-4">
 
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" aria-current="page" href="homepage">Home</a>
+                        <a th:href="@{/}" class="nav-link text-secondary" aria-current="page">Home</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="bio">Bio</a>
+                        <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
                     </li>
 
                     <li class="nav-item">
-                        <a th:href="@{/catalogo}"  class="nav-link active" href="catalogo">Catalogo</a>
+                        <a th:href="@{/catalogo}"  class="nav-link active">Catalogo</a>
                     </li>
 
                     <li class="nav-item">
-                        <a th:href="@{/login}"  class="icon-link text-secondary" href="login">
+                        <a th:href="@{/login}"  class="icon-link text-secondary">
                             <i class='far fa-user-circle'></i>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a th:href="@{/carrello}" class="icon-link text-secondary" href="carrello">
+                        <a th:href="@{/carrello}" class="icon-link text-secondary">
                             <i class='fas fa-shopping-bag'></i>
                         </a>
                     </li>
@@ -76,6 +76,8 @@
             <div class="cardalbum-body">
                 <h5 class="cardalbum-title"></h5>
                 <p class="cardalbum-text" th:text="${album.titolo} + ' - ' + 'Pubblicato nel ' + ${album.anno}"></p>
+                <p class="cardalbum-text" th:text="'Prezzo: '  + '€ ' + ${album.prezzo}"></p>
+                <p class="cardalbum-text" th:text="'Pezzi disponibili: '  + ${album.quantita}"></p>
                 <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark" th:text="'+'"></a>
                 <a th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark" th:text="'Acquista'"></a>
             </div>
