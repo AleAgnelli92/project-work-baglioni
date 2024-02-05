@@ -419,7 +419,6 @@ a.cardHover:visited {
     object-fit: cover;
 }
 
-
 /* BIO */
 .divBio {
     background-color: white;
@@ -484,6 +483,57 @@ a.cardHover:visited {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* PERSONALE */
+.btnPersonale {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.titoloPersonale {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px !important;
+}
+
+.titoloOrdini {
+    display: flex;
+    align-items: center;
+    margin-top: 20px !important;
+}
+
+.logOutIcon {
+    text-align: right;
+    color: black;
+}
+
+.logOutIcon:hover {
+    color: #f0f0f0;
+}
+
+.formDati {
+    margin-top: 10px;
+    
+}
+
+.colTitoloCarrello p, .colDataCarrello p, .colQuantitaCarrello p, .colPrezzoCarrello p  {
+    margin-bottom: 0;
+}
+
+.colTitoloPrezzoCarrello p {
+    font: 12px !important;
+    margin-top: 5px;
+}
+
+.rowOrdini {
+    margin-top: 10px !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
 }
 
 /*Brani dettaglio*/
