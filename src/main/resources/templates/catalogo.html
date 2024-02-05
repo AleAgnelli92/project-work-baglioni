@@ -70,8 +70,8 @@
     <div class="titoloCatalogoHome">
       <h4>Catalogo</h4>
     </div>
-    <div class="catalogo-album" th:each="album : ${albums}">
-        <div class="cardalbum">
+    <div class="catalogo-album" >
+        <div class="cardalbum" th:each="album : ${albums}">
             <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="cardalbum-img-top" alt="Album Cover">
             <div class="cardalbum-body">
                 <h5 class="cardalbum-title"></h5>
