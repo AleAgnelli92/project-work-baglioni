@@ -11,4 +11,6 @@ public interface ClienteService {
 
 	Cliente getClienteById(Integer id);
 
+	void modificareDatiPersonali(Cliente cliente);
+
 }

@@ -58,15 +58,17 @@
         <h1 th:text="'Benvenuto nella tua area riservata ' + ${username}"></h1>
 		
 		
-        <!--FORM DISABILITATO -->
+        <!--FORM-->
         <div class="container-fluid">
             <div class="row">
                 <div class="formDati col-md-6">
                     <div class="titoloPersonale row"> 
                         <h4 class="col-md-10">I miei dati</h4>
-                        <a class="logOutIcon col-md-2" href="#">
-                            <i class='fas fa-sign-out-alt'></i>
-                          </a>
+                        
+                        <a class="logOutIcon col-md-2" th:href="@{/login}">
+    						<i class="fas fa-sign-out-alt"></i>
+						</a>
+
                       </div>
                       
                     <form role="form" th:object="${cliente}" method="post">
@@ -132,7 +134,7 @@
                       
                       <div class="form-group">
                         <label for="cap" class="form-label">Cap</label>
-                        <input type="text" th:field="*{cap}" class="form-control" id="inputCap" >
+                        <input type="text" th:field="*{cap}" class="form-control" id="cap" >
                       </div>
                       
                       
@@ -140,9 +142,7 @@
                       <!--QUESTO BUTTON DEVE COMPARIRE SOLO QUANDO STO MODIFICANDO, PER INVIARE I DATI AGGIORNATI-->
                       <div class="col-12 btnLogin">
                         <input type="submit" value = "Modifica" class=" btn btn-outline-dark">
-                      </div>
-                      
-                     
+                      </div>                     
                     </form>
                   </div>
                   

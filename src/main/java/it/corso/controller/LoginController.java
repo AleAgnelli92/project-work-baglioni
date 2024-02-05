@@ -33,7 +33,6 @@ public class LoginController {
 		
 	}
 	
-	
 	@PostMapping("/controllo")
 	public String loginManager(@RequestParam("username") String username,
 							  @RequestParam("password") String password,
@@ -45,7 +44,6 @@ public class LoginController {
 		return "redirect:/personale";
 	}
 	
-	
 
 	@GetMapping("/logout")
     public String logout(HttpSession session) {
@@ -54,5 +52,4 @@ public class LoginController {
 
         return "redirect:/login";
     }
-	
 }

@@ -40,15 +40,32 @@ public class PersonaleController {
         return "personale";
     }
     
+//    @PostMapping
+//    public String modificaDatiPersonali(@ModelAttribute("cliente") Cliente cliente, HttpSession session) {
+//    	
+//    	System.out.println(cliente);
+//    	
+//    	clienteService.registrazioneCliente(cliente);
+//    	session.setAttribute("cliente", cliente);
+//    	
+//        return "redirect:/personale"; 
+//    }
+    
     @PostMapping
     public String modificaDatiPersonali(@ModelAttribute("cliente") Cliente cliente, HttpSession session) {
-    	
-    	System.out.println(cliente);
-    	
-    	clienteService.registrazioneCliente(cliente);
-    	session.setAttribute("cliente", cliente);
-    	
+        // Recupera il cliente attualmente loggato dalla sessione
+        Cliente clienteLoggato = (Cliente) session.getAttribute("cliente");
+        
+        // Imposta l'ID del cliente che si sta modificando con quello del cliente loggato
+        cliente.setId(clienteLoggato.getId());
+        
+        clienteService.modificareDatiPersonali(cliente);
+        
+        // Aggiorna il cliente nella sessione con i nuovi dati
+        session.setAttribute("cliente", cliente);
+        
         return "redirect:/personale"; 
     }
+
 }
 
