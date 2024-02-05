@@ -67,10 +67,16 @@
                             <p th:text="'Prezzo: ' + ${album.prezzo}"></p>
                         </div>
                         <div class="col-md-2 colQuantitaCarrello col-sm">
-                            <p>1</p>
-                        </div>
+						    <a th:href="@{/carrello/rimuovi(id=${album.id})}">
+						        <button type="submit" class="btn btn-outline-dark">-</button>
+						    </a>
+						    <p th:text="${quantitaProdotto}"></p>
+						    <a th:href="@{/carrello/aggiungi(id=${album.id})}">
+						        <button type="submit" class="btn btn-outline-dark">+</button>
+						    </a>
+						</div>
                         <div class="col-md-2 colCestinoCarrello col-sm">
-                            <a th:href="@{'/carrello/rimuovi?id=' + ${album.id}}" class="icon-link cestinoCarrello text-dark btn btn-light">
+                            <a th:href="@{'/carrello/rimuovi?id=' + ${album.id}}" class="icon-link cestinoCarrello text-dark btn btn-light" role="button">
                                 <i class='far fa-trash-alt'></i>
                             </a>
                         </div>

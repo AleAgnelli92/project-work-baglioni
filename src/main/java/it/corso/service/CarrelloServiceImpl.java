@@ -25,4 +25,23 @@ public class CarrelloServiceImpl implements CarrelloService {
 		session.setAttribute("carrello", carrello);
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public void rimuoviAlbum(HttpSession session, int id) {
+		List<Album> carrello = (List<Album>) session.getAttribute("carrello");
+        if (carrello != null) {
+            int indexToRemove = -1;
+            for (int i = 0; i < carrello.size(); i++) {
+                if (carrello.get(i).getId() == id) {
+                    indexToRemove = i;
+                    break;
+                }
+            }
+            if (indexToRemove != -1) {
+                carrello.remove(indexToRemove);
+            }
+        }
+        session.setAttribute("carrello", carrello);
+	}
+
 }
