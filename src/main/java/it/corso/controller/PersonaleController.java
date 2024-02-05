@@ -26,4 +26,5 @@ public class PersonaleController {
 
         return "personale";
     }
+
 }

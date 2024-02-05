@@ -16,22 +16,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
 	</head>
 	<body>
-		<!-- CODICE GIA' PRESENTE -->
-		<ul>
-			<li th:each="album : ${albumNelCarrello}">
-				<span th:text="'Titolo: ' + ${album.titolo}"></span>
-				
-				<span th:text="'Prezzo: ' + ${album.prezzo}"></span>
-				
-				<a th:href="@{'/carrello/rimuovi?id=' + ${album.id}}" class="btn btn-primary">Elimina prodotto</a>
-			</li>
-			
-		</ul>
-
-		<a th:href="@{/catalogo}">Torna a catalogo</a>
-		<a th:href="@{/login}">Login</a>
-		
-		<!-- CODICE ALE -->
 		<!--NAVBAR-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
             <div class="container-fluid elementiNav">
@@ -41,21 +25,21 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" href="homepage.html">Home</a>
+                    <a class="nav-link text-secondary" th:href="@{/}">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" href="bio.html">Bio</a>
+                    <a class="nav-link text-secondary" th:href="@{/bio}">Bio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" href="catalogo.html">Catalogo</a>
+                    <a class="nav-link text-secondary" th:href="@{/catalogo}">Catalogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="icon-link text-secondary" href="login.html">
+                    <a class="icon-link text-secondary" th:href="@{/login}">
                       <i class='far fa-user-circle'></i>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active icon-link" aria-current="page" href="carrello.html">
+                    <a class="nav-link active icon-link" aria-current="page" th:href="@{/carrello}">
                       <i class="fas fa-shopping-bag"></i>
                     </a>
                   </li>
@@ -72,36 +56,36 @@
             <div class="titoloCarrello">
                 <h4>Carrello</h4>
             </div>
-            <div class="row my-4">
+            <div class="row my-4" >
                 <div class="col-md-8">
-                    <div class="row rowTabella">
+                    <div th:each="album : ${albumNelCarrello}" class="row rowTabella">
                         <div class="col-md-3 colFotoCarrello col-sm">
-                            <img src="img/eTuHomePage.jpeg" class="img-thumbnail img-fluid" alt="Prodotto Carrello"> <!--GESTITA DA TH-->
+                            <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="img-thumbnail img-fluid" alt="Prodotto Carrello"> <!--GESTITA DA TH-->
                         </div>
                         <div class="col-md-5 colTitoloPrezzoCarrello col-sm">
-                            <h5>Titolo</h5> <!--GESTITA DA TH-->
-                            <p>Prezzo</p> <!--GESTITA DA TH-->
+                            <h5 th:text="'Titolo: ' + ${album.titolo}"></h5> 
+                            <p th:text="'Prezzo: ' + ${album.prezzo}"></p>
                         </div>
                         <div class="col-md-2 colQuantitaCarrello col-sm">
-                            <p>1</p> <!--FISSA-->
+                            <p>1</p>
                         </div>
                         <div class="col-md-2 colCestinoCarrello col-sm">
-                            <a class="icon-link cestinoCarrello text-dark btn btn-light">
-                                <i class='far fa-trash-alt'></i> <!--ELIMINA IL PRODOTTO-->
+                            <a th:href="@{'/carrello/rimuovi?id=' + ${album.id}}" class="icon-link cestinoCarrello text-dark btn btn-light">
+                                <i class='far fa-trash-alt'></i>
                             </a>
                         </div>
                         
                     </div>
                     <hr class="hr" />
                     <div class="row rowIndirizzo">
-                        <h5>Indirizzo</h5> 
-                        <p>Via Giovanni Pascoli, 31, Bardello (VA) - 21020</p> <!--GESTITA DA TH-->
+                        <h5 >Recap dei dati:</h5> 
+                        <p></p>
                     </div>
                 </div>
 
                 <div class="col-md-4 colonnaPagamento">
                     <h5>Pagamento</h5>
-                    <p class="totalePagamento">€ totali</p>
+                    <p th:text="'Prezzo Totale: ' + ${totaleOrdineNelCarrello}" class="totalePagamento"></p>
                     <img src="img/paypal-icon.svg" class="payPal">
                     <a class="btn btn-dark btnPayPal" type="button" onclick="mostraAlert()">Paga ora</a>
                     <div id="customAlert" class="custom-alert">

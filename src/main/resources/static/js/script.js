@@ -17,7 +17,7 @@ function chiudiAlert() {
     var customAlert = document.getElementById('customAlert');
     customAlert.style.display = 'none';
 
-    window.location.href = "personale.html";
+    window.location.href = "personale";
 }
 
 

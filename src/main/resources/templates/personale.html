@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,12 +16,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@500&display=swap" rel="stylesheet">
     </head>
     <body>
-    	<!-- CODICE ESISTENTE --> 
 
-		<h1 th:text="'Benvenuto nella tua area riservata ' + ${username}"></h1>
-		<a th:href="@{/}">Torna in Home Page</a>
-		
-		<!-- CODICE CORRETTO -->
         <!--NAVBAR-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
           <div class="container-fluid elementiNav">
@@ -31,21 +26,21 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto me-4">
                 <li class="nav-item">
-                  <a class="nav-link text-secondary" href="homepage.html">Home</a>
+                  <a class="nav-link text-secondary" th:href="@{/}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-secondary" href="bio.html">Bio</a>
+                  <a class="nav-link text-secondary" th:href="@{/bio}">Bio</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-secondary" href="catalogo.html">Catalogo</a>
+                  <a class="nav-link text-secondary" th:href="@{/catalogo}">Catalogo</a>
                 </li>
                 <li class="nav-item">
-                  <a class="icon-link active nav-link" href="login.html" aria-current="page">
+                  <a class="icon-link active nav-link" th:href="@{/login}" aria-current="page">
                     <i class='far fa-user-circle'></i>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="icon-link text-secondary" href="carrello.html">
+                  <a class="icon-link text-secondary" th:href="@{/carrello}">
                     <i class='fas fa-shopping-bag'></i>
                   </a>
                 </li>
@@ -72,7 +67,7 @@
                       <!--SE CLICCO SUL TASTO MODIFICA, IL DISABLED SPARISCE-->
                       <div class="form-group">
                         <label for="inputUsernameR" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="inputUsernameR" placeholder="AleAgne92" disabled> 
+                        <input type="text" class="form-control" id="inputUsernameR" th:placeholder="AleAgne92" disabled> 
                       </div>
                       <div class="form-group">
                         <label for="inputPasswordR" class="form-label">Password</label>

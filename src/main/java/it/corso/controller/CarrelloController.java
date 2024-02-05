@@ -28,6 +28,10 @@ public class CarrelloController {
 	{
 		List<Album> carrello = (List<Album>) session.getAttribute("carrello");
 		model.addAttribute("albumNelCarrello", carrello);
+		
+		double totaleOrdine = calcolaTotaleOrdine(carrello);
+        model.addAttribute("totaleOrdineNelCarrello", String.format("%.2f", totaleOrdine));
+        
 		return "carrello";
 	}
 	
@@ -59,4 +63,16 @@ public class CarrelloController {
 	    session.setAttribute("carrello", carrello);
 	    return "redirect:/carrello";
 	}
+	
+	private double calcolaTotaleOrdine(List<Album> carrello) {
+        double totale = 0;
+        if (carrello != null) {
+            for (Album album : carrello) {
+                totale += album.getPrezzo();
+            }
+        }
+
+        return totale;
+    }
+	
 }

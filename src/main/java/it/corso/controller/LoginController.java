@@ -22,6 +22,7 @@ public class LoginController {
 	@Autowired
 	private ClienteService clienteService;
 	
+
 	@GetMapping
 	public String getPage(HttpSession session, Model model) {
 	    if (session.getAttribute("cliente") != null)
@@ -29,6 +30,8 @@ public class LoginController {
 	    
 	    model.addAttribute("cliente", new Cliente()); 
 	    return "login";
+		
+		
 	}
 	
 	
@@ -50,5 +53,6 @@ public class LoginController {
 		clienteService.registrazioneCliente(cliente);
 		return "redirect:/login";
 	}
+
 	
 }

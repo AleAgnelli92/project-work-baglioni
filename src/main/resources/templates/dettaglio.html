@@ -7,41 +7,6 @@
     	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 	</head>
 	<body>
-		<!-- CODICE PRESENTE -->
-		<div class="container-fluid">
-			<div class="row mt-4">
-				<div class="col-10 text-center">
-					<h4 th:text="'Dettaglio Album'"></h4>
-				</div>
-				<div class="col-2 text-end">
-					<a th:href="@{/catalogo}" th:text="'Torna al Catalogo'" class="btn btn-secondary"></a>
-				</div>
-			</div>
-			<div class="row justify-content-center mt-4">
-				<div class="col-4">
-					<h5 th:text="'Titolo: ' + ${album.titolo}"></h5>
-				</div>
-				<div class=" align-middle text-end">
-					<a th:href="@{/carrello/aggiungi(id=${album.id})}" class="btn btn-primary btn-sm" 
-										th:text="'Acquista'"></a>
-								</div>
-				<div class="col-4">
-					<img th:if="${album.copertina != null}" th:src="@{${album.copertina}}" 
-						class="img-thumbnail" alt="album"
-						style="width:160px;max-width:160px;height:180px;max-height:180px;">
-					<img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" 
-						class="img-thumbnail" alt="libro"
-						style="width:160px;max-width:160px;height:180px;max-height:180px;">
-				</div>
-			
-				<div th:each="brano : ${dettagli}">
-					<h5 th:text="'Titolo: ' + ${brano.brano}"></h5>
-					<h5 th:text="'Durata: ' + ${brano.durata}"></h5>
-				</div>
-				<!--  <h5 th:each="brano : ${dettagli}" th:text="'Titolo: ' + ${brano.brano} +', Durata: ' + ${brano.durata}"></h5>-->
-			</div>
-			
-			<!-- CODICE CORRETTO -->
 			<!--NAVBAR-->
 		    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
 		        <div class="container-fluid elementiNav">
@@ -55,25 +20,25 @@
 		                <ul class="navbar-nav ms-auto me-4">
 		
 		                    <li class="nav-item">
-		                        <a class="nav-link text-secondary" aria-current="page" href="homepage.html">Home</a>
+		                        <a class="nav-link text-secondary" aria-current="page" th:href="@{/}">Home</a>
 		                    </li>
 		
 		                    <li class="nav-item">
-		                        <a class="nav-link text-secondary" href="bio.html">Bio</a>
+		                        <a class="nav-link text-secondary" th:href="@{/bio}">Bio</a>
 		                    </li>
 		
 		                    <li class="nav-item">
-		                        <a class="nav-link text-secondary" href="catalogo.html">Catalogo</a>
+		                        <a class="nav-link text-secondary" th:href="@{/catalogo}">Catalogo</a>
 		                    </li>
 		
 		                    <li class="nav-item">
-		                        <a class="icon-link text-secondary" href="login.html">
+		                        <a class="icon-link text-secondary" th:href="@{/login}">
 		                            <i class='far fa-user-circle'></i>
 		                        </a>
 		                    </li>
 		
 		                    <li class="nav-item">
-		                        <a class="icon-link text-secondary" href="carrello.html">
+		                        <a class="icon-link text-secondary" th:href="@{/carrello}">
 		                            <i class='fas fa-shopping-bag'></i>
 		                        </a>
 		                    </li>
@@ -95,41 +60,32 @@
 		            <!-- Immagine dell'album -->
 		            <div class="col-md-4">
 		                <div class="text-bg-dark divImgDettaglioAlbum">
-		                    <img src="img/eTuHomePage.jpeg" class="imgDettaglioAlbum img-fluid" alt="Baglioni Dettaglio">
+		                    <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="imgDettaglioAlbum img-fluid" alt="Baglioni Dettaglio">
 		                </div>
 		            </div>
 		
 		            <!-- Titolo, Anno di pubblicazione, Descrizione -->
 		            <div class="col-md-6">
-		                <h2 class="mb-3">E tu...</h2>
-		                <p>€ 25,50</p> 
+		                <h2 th:text="'Titolo: ' + ${album.titolo}" class="mb-3"></h2>
+		                <p th:text="'Prezzo: €' + ${album.prezzo}"></p> 
 		                 <br>
-		                 <b>Vinile</b>
+		                 <b th:text="'Tipologia: ' + ${album.tipologia}"></b>
 		                
-		                <p class="text-muted">1974</p>
-		                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et odio a magna congue convallis nec
-		                    ac nisi.</p>
+		                <p th:text="'Anno: ' + ${album.anno}" class="text-muted"></p>
+		                <p th:text="'Descrizione: ' + ${album.descrizione}" class="text-muted"></p>
 		                <!-- Brani -->
 		                <p class="mt-4">Brani Inclusi:</p>
 		                <div class="NomiBrani">
-		                    <ol>
-		                        <li>E tu...</li>
-		                        <li>Oh Merilù</li>
-		                        <li>E me lo chiami amore</li>
-		                        <li>Ad Agordo è così</li>
-		                        <li>Ninna nanna nanna ninna (da Ninna nanna della guerra una poesia di Trilussa)</li>
-		                        <li>Chissà se mi pensi</li>
-		                        <li>A modo mio</li>
-		                        <li>Il mattino si è svegliato</li>
-		                        <li>Quanta strada da fare</li>
-		                        <li>Canto</li>
-		                    </ol>
+		                    <ul th:each="brano : ${dettagli}">
+		                        <li th:text="${brano.brano}"></li>
+		                        <li th:text="${brano.durata}"></li>
+		                    </ul>
 		                </div>
 		                <div>
-			                <p class="verde">Pezzi Disponibili:10</p>
+			                <p th:text="'Pezzi disponibili: '  + ${album.quantita}" class="verde"></p>
 			                <p class="rosso">Esaurito</p>
 			                <!-- Bottone Aggiunta al Carrello -->    
-			                <a href="carrello.html" role="button" class="btn btn-outline-dark">
+			                <a th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
 			                  <i class='fas fa-shopping-bag' style="font-size: 23px"></i>
 			                </a>
 		              	</div>
