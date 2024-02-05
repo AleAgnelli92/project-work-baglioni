@@ -8,5 +8,20 @@ window.addEventListener('scroll', () => {
     }
 })
 
+function mostraAlert() {
+    var customAlert = document.getElementById('customAlert');
+    customAlert.style.display = 'block';
+}
+
+function chiudiAlert() {
+    var customAlert = document.getElementById('customAlert');
+    customAlert.style.display = 'none';
+
+    window.location.href = "personale.html";
+}
+
+
+
+
   
 
