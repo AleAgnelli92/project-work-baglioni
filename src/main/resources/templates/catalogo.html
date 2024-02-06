@@ -30,7 +30,7 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
                   <li class="nav-item">
-                    <a th:href="@{/}" class="nav-link text-secondary">Home</a>
+                    <a th:href="@{/}" class="nav-link text-secondary" >Home</a>
                   </li>
                   <li class="nav-item">
                     <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
@@ -63,31 +63,34 @@
 		<a th:href="@{/}" class="tornaHomepage"><i class='fas fa-angle-left'></i> Torna in home page</a>
 	</div>
     <!--CATALOGO-->
-    <div class="titoloCatalogoHome">
-      <h4>Catalogo</h4>
-    </div>
-    <div class="catalogo-album" >
-    	
-	        <div class="cardalbum" th:each="album : ${albums}">
-	        	<a th:href="@{/dettaglio(id=${album.id})}" class="txtCard">
-	            <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="cardalbum-img-top" alt="Album Cover">
-	            <div class="cardalbum-body">
-	                <h5 class="cardalbum-title"></h5>
-	                <p class="cardalbum-text" th:text="${album.titolo}"></p>
-	                <p class="cardalbum-text" th:text="${album.anno}"></p>
-	                <p class="cardalbum-text" th:text="'€ ' + ${album.prezzo}"></p>
-	                <p class="cardalbum-text" th:text="'Pezzi disponibili: '  + ${album.quantita}"></p>
-	                <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark">
-	                		<i class='fas fa-info-circle'></i>
-	                	</a>
-	                <a th:if="${album.quantita > 0} "th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
-			                  <i class='fas fa-shopping-bag' style="font-size: 23px"></i>
-			        </a>
-	            </div>
-	             </a>
+    <div class="catalogo-album mx-5">
+	    <div class="titoloCatalogoHome">
+	      <h4>Catalogo</h4>
+	    </div>
+	    
+	    <div class="row">
+	      <div class="col-lg-3 col-md-6 d-flex align-items-stretch gx-4 gy-4" th:each="album : ${albums}">
+	        <div class="card cardHover flex-fill">
+	          <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="cardalbum-img-top" alt="Card Image">
+	          <div class="card-body d-flex flex-column">
+	            <h5 class="card-title cardCatalogo" th:text="${album.titolo}"></h5>
+	            <p class="card-text mb-4 cardCatalogo" th:text="${album.anno}"></p>
+	            <p class="card-text mb-4 cardCatalogo" th:text="'€ ' + ${album.prezzo}"></p>
+	            <p class="card-text mb-4 cardCatalogo" th:text="'Pezzi disponibili: '  + ${album.quantita}"></p>
+	            <div class="bottoniCat">
+					<a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark btnCatalogo">
+						<i class='fas fa-info-circle'></i>
+					</a>
+					<a th:if="${album.quantita > 0} "th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark btnCatalogo">
+						<i class='fas fa-shopping-bag'></i>
+					</a>
+				</div>
+	          </div>
 	        </div>
-       
-    </div>
+	    </div>
+	   </div>
+      
+	</div>	
     <!-- FOOTER -->
     <footer class="text-center text-white bgFooterHome">
         <!-- Grid container -->

@@ -156,14 +156,13 @@ a.cardHover:visited {
     text-decoration: none;
 }
 
-.cardHover:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
-}
+
 
 .bottoniHome {
 	display: flex;
 	align-content: end;
 	margin-top: 10px;
+	gap: 5px;
 }
 
 .btnCatHome {
@@ -440,51 +439,63 @@ a.cardHover:visited {
 	color: #f0f0f0;
 }
 
-.catalogo-album{
+.cardalbum-text {
+	font-size: 30px;
+	margin: 0;
+}
+
+h5.cardCatalogo {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 20px;
+}
+
+p.cardCatalogo {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 14px;
+}
+
+.cardHover {
+	overflow: hidden;
+}
+
+.cardalbum-img-top {
+   width: 100%;
+   height: auto;
+   object-fit: cover; 
+   aspect-ratio: 1 / 1;
+
+}
+
+.cardalbum-body {
+	display: flex;
+    flex-direction: column;
+    padding: 15px;
+    margin-top: auto;
+ 
+	
+  
+}
+.cardalbum {
+ 	border: 1px solid #ddd;
+    border-radius: 8px;
+    
+ }
+ 
+ .catalogo-album {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-  }
-  
-  .cardalbum {
-    width: 250px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s;
-  }
-  
-  .cardalbum-img-top {
-    width: 100%;
-    height: 200px; 
-    object-fit: cover; 
-  }
-  
-  .cardalbum-body {
-    padding: 15px;
-  }
-  
-  .cardalbum-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .cardalbum-text {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .cardalbum-hover {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .txtCard {
-  	text-decoration: none;
-  	color: black;
-  }
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.bottoniCat {
+	display: flex;
+	align-content: end;
+	margin-top: 10px !important;
+	gap: 5px;
+}
+
 
 .divImgCatalogo {
     border: none !important;
@@ -511,6 +522,13 @@ a.cardHover:visited {
     height: 100%;
     object-fit: cover;
 }
+
+.txtCard {
+	text-decoration: none;
+}
+
+
+
 
 /* BIO */
 .divBio {

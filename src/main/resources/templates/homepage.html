@@ -67,7 +67,7 @@
 			            <div class="card-body">
 			                <h5 th:text="${album.titolo}" class="card-title prodotti"></h5>
 			                <p th:text="${album.anno}" class="card-text prodotti"></p>
-			                <p th:text="${album.prezzo}" class="card-text prodotti"></p>
+			                <p th:text="'€ ' + ${album.prezzo}" class="card-text prodotti"></p>
 			                <div class="bottoniHome">
 			                    <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark">
 			                        <i class='fas fa-info-circle'></i>
