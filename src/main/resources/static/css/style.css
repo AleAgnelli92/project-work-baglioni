@@ -31,7 +31,22 @@
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
-
+@media (max-width: 992px) {
+    .navbar-nav {
+        background-color: rgba(0, 0, 0, 0.85); 
+        position: absolute;
+       
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-nav .nav-item {
+        display: block;
+        margin: 10px 0;
+    }
+    .navbar-nav .nav-link {
+        color: white !important;
+    }
+}
 
 /* HOMEPAGE */
 .imgHome {
