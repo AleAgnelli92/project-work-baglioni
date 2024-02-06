@@ -33,9 +33,9 @@
 
 @media (max-width: 992px) {
     .navbar-nav {
-        background-color: rgba(0, 0, 0, 0.85); 
+        background-color: rgba(0, 0, 0, 0.85); /* Sfondo scuro */
         position: absolute;
-       
+        top: 56px; /* Altezza della navbar principale */
         width: 100%;
         text-align: center;
     }
@@ -46,7 +46,15 @@
     .navbar-nav .nav-link {
         color: white !important;
     }
+    .navbar-nav .nav-item.dropdown:hover .nav-link {
+        color: white !important;
+    }
+    .navbar-nav .dropdown-menu {
+        background-color: transparent !important; /* Rimuove lo sfondo */
+        box-shadow: none !important; /* Rimuove l'ombra */
+    }
 }
+
 
 /* HOMEPAGE */
 .imgHome {
