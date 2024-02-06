@@ -72,7 +72,7 @@
                                   	<a th:href= "@{/dettaglio(id=${album.id})} " role="button" class="btn btn-outline-dark">
 				                		<i class='fas fa-info-circle'></i>
 				                	</a>
-					                <a th:href = "@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
+					                <a th:if="${album.quantita > 0}" th:href = "@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
 					                		<i class='fas fa-shopping-bag'></i>
 					                </a>
                                   </div>
