@@ -64,9 +64,7 @@
 		        <div class="row">
 		            <!-- Immagine dell'album -->
 		            <div class="col-md-5">
-		                <div class="text-bg-dark divImgDettaglioAlbum">
-		                    <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="imgDettaglioAlbum img-fluid" alt="Baglioni Dettaglio">
-		                </div>
+		                <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="imgDettaglioAlbum img-fluid" alt="Baglioni Dettaglio">
 		            </div>
 		
 		            <!-- Titolo, Anno di pubblicazione, Descrizione -->
