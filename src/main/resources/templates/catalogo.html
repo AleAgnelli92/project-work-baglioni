@@ -22,45 +22,36 @@
 <body>
 
     <!--NAVBAR-->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-        <div class="container-fluid elementiNav">
-
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+            <div class="container-fluid elementiNav gx-0">
+              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
-
-                    <li class="nav-item">
-                        <a th:href="@{/}" class="nav-link text-secondary" >Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a th:href="@{/catalogo}"  class="nav-link active" aria-current="page">Catalogo</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a th:href="@{/login}"  class="icon-link text-secondary">
-                            <i class='far fa-user-circle'></i>
-                        </a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a th:href="@{/carrello}" class="icon-link text-secondary">
-                            <i class='fas fa-shopping-bag'></i>
-                        </a>
-                    </li>
-
+                  <li class="nav-item">
+                    <a th:href="@{/}" class="nav-link text-secondary">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a th:href="@{/catalogo}" class="nav-link active" aria-current="page">Catalogo</a>
+                  </li>
+                  <li class="nav-item">
+                    <a th:href="@{/login}" class="icon-link text-secondary">
+                      <i class='far fa-user-circle'></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a th:href="@{/carrello}" class="icon-link text-secondary">
+                      <i class='fas fa-shopping-bag'></i>
+                    </a>
+                  </li>
                 </ul>
+              </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
     <!--IMG-->
     <div class="text-bg-dark divImgCatalogo">

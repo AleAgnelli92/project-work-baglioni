@@ -18,29 +18,29 @@
 	<body>
 		<!--NAVBAR-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-            <div class="container-fluid elementiNav">
+            <div class="container-fluid elementiNav gx-0">
               <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto me-4">
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" th:href="@{/}">Home</a>
+                    <a th:href="@{/}" class="nav-link text-secondary">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" th:href="@{/bio}">Bio</a>
+                    <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link text-secondary" th:href="@{/catalogo}">Catalogo</a>
+                    <a th:href="@{/catalogo}" class="nav-link text-secondary">Catalogo</a>
                   </li>
                   <li class="nav-item">
-                    <a class="icon-link text-secondary" th:href="@{/login}">
+                    <a th:href="@{/login}" class="icon-link text-secondary">
                       <i class='far fa-user-circle'></i>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active icon-link" aria-current="page" th:href="@{/carrello}">
-                      <i class="fas fa-shopping-bag"></i>
+                    <a th:href="@{/carrello}" class="nav-link active icon-link" aria-current="page">
+                      <i class='fas fa-shopping-bag'></i>
                     </a>
                   </li>
                 </ul>

@@ -20,35 +20,35 @@
 		<!-- CODICE CORRETTO -->
         <!--NAVBAR-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-          <div class="container-fluid elementiNav">
-            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto me-4">
-                <li class="nav-item">
-                  <a th:href="@{/}" class="nav-link text-secondary" >Home</a>
-                </li>
-                <li class="nav-item">
-                  <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
-                </li>
-                <li class="nav-item">
-                  <a th:href="@{/catalogo}" class="nav-link text-secondary" >Catalogo</a>
-                </li>
-                <li class="nav-item">
-                  <a class="icon-link active nav-link" href="login" aria-current="page">
-                    <i class='far fa-user-circle'></i>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a th:href="@{/carrello}" class="icon-link text-secondary" href="carrello">
-                    <i class='fas fa-shopping-bag'></i>
-                  </a>
-                </li>
-              </ul>
+            <div class="container-fluid elementiNav gx-0">
+              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-4">
+                  <li class="nav-item">
+                    <a th:href="@{/}" class="nav-link text-secondary" >Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a th:href="@{/catalogo}" class="nav-link text-secondary">Catalogo</a>
+                  </li>
+                  <li class="nav-item">
+                    <a th:href="@{/login}" class="nav-link active icon-link" aria-current="page">
+                      <i class='far fa-user-circle'></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a th:href="@{/carrello}" class="icon-link text-secondary">
+                      <i class='fas fa-shopping-bag'></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-      </nav>
+        </nav>
         <!--IMG-->
         <div class="text-bg-dark divImgLogin">
             <img src="img/areaPersonale.jpg" class="imgLogin img-fluid" alt="Baglioni Area Personale">

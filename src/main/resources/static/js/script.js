@@ -10,6 +10,13 @@ window.addEventListener('scroll', () => {
     }
 })
 
+document.querySelector('.navbar')[
+    document.addEventListener ? 'addEventListener' : 'attachEvent'
+]('click', function() {
+    this.style.backgroundColor = this.style.backgroundColor === 'rgba(0, 0, 0, 0.85)' ?
+        'transparent' : 'rgba(0, 0, 0, 0.85)';
+});
+
 function mostraAlert() {
     var customAlert = document.getElementById('customAlert');
     customAlert.style.display = 'block';
