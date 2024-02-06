@@ -54,9 +54,6 @@
             <img src="img/areaPersonale.jpg" class="imgLogin img-fluid" alt="Baglioni Area Personale">
         </div>
         
-        <!--Testo di benvenuto-->
-        <h1 th:text="'Benvenuto nella tua area riservata ' + ${username}"></h1>
-		
 		
         <!--FORM-->
         <div class="container-fluid">
@@ -146,20 +143,20 @@
                         <h4 class="col-md-10">I miei ordini</h4>
                     </div>
                     <div class="row rowOrdini">
-                        <div class="col-md-2 colFotoCarrello col-sm">
-                            <img src="img/eTuHomePage.jpeg" class="img-thumbnail img-fluid" alt="Prodotto Carrello"> <!--GESTITA DA TH-->
-                        </div>
-                        <div class="col-md-4 colTitoloCarrello col-sm">
-                            <p>Titolo</p> <!--GESTITA DA TH-->
-                        </div>
-                        <div class="col-md-3 colDataCarrello col-sm">
+                        
+                        <div class="col-md-5 colDataCarrello col-sm">
                             <p>Data</p> <!--GESTITA DA TH-->
                         </div>
-                        <div class="col-md-1 colQuantitaCarrello col-sm">
-                            <p>1</p> <!--FISSA ?-->
-                        </div>
-                        <div class="col-md-2 colPrezzoCarrello col-sm">
+                       
+                        <div class="col-md-5 colPrezzoCarrello col-sm">
                             <p>Prezzo</p> <!--GESTITA DA TH-->
+                        </div>
+                        <div class="col-md-2 colDettaglioCarrello col-sm">
+                            <button class="lenteOrdini text-dark btn btn-light" onclick="mostraAlert()"><i class='fas fa-search'></i></button>
+                            <div id="customAlert" class="custom-alert">
+		                      <span class="close" onclick="chiudiAlertOrdini()">&times;</span>
+		                      <p>Qui dentro deve mostrare il riepilogo</p>
+		                  </div>
                         </div>
                     </div>
                 </div>

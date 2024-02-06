@@ -76,10 +76,23 @@
 						    </a>
 						</div>
                         <div class="col-md-2 colCestinoCarrello col-sm">
-                            <a th:href="@{'/carrello/rimuovi?id=' + ${album.id}}" class="icon-link cestinoCarrello text-dark btn btn-light" role="button">
-                                <i class='far fa-trash-alt'></i>
-                            </a>
+                        		
+								
+								<div id="confirm">
+							      <p>Sei sicuro di voler eliminare questo prodotto dal carrello?</p>
+							      <div class = "close">
+							         <button th:onclick="'confermaEliminazione(' + ${album.id} + ')'" class="btn btn-dark btnPopUp"> Sì </button>
+							         <button th:onclick = "closeConfirm()" class="btn btn-dark btnPopUp"> No </button>
+							      </div>
+							   </div>
+							   <button th:onclick="showConfirm()" class="icon-link cestinoCarrello text-dark btn btn-light">
+								    <i class='far fa-trash-alt'></i>
+							</button>
+						
+							   
                         </div>
+                        
+                        
                         
                     </div>
                     <hr class="hr" />
@@ -94,10 +107,16 @@
                     <p th:text="'Prezzo Totale: ' + ${totaleOrdineNelCarrello}" class="totalePagamento"></p>
                     <img src="img/paypal-icon.svg" class="payPal">
                     <a class="btn btn-dark btnPayPal" type="button" onclick="mostraAlert()">Paga ora</a>
-                    <div id="customAlert" class="custom-alert">
+                    <!-- QUESTO COMPARE SE SEI GIA' LOGGATO  -->
+                    <div id="customAlert" class="custom-alert"> 
                       <span class="close" onclick="chiudiAlert()">&times;</span>
                       <p>Pagamento effettuato con successo!</p>
-                  </div>
+                  	</div> 
+                  	<!-- QUESTO COMPARE SE NON SEI LOGGATO -->
+                  	<div id="customAlert" class="custom-alert"> 
+                      <span class="close" onclick="chiudiAlertAccesso()">&times;</span>
+                      <p>Accedi o registrati</p>
+                  	</div>
                 </div>
             </div>
         </div>
