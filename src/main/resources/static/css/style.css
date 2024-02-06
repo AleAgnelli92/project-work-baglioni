@@ -75,6 +75,12 @@
     font-size: 100px;
 }
 
+.card-title, .card-text {
+	margin-top: auto; 
+        overflow: hidden; 
+        text-overflow: ellipsis;
+}
+
 @media (max-width: 800px) {
     .card-title {
         font-size: 70px; 
@@ -122,9 +128,22 @@ p.prodotti {
     font-size: 14px;
 }
 
+.cardHover {
+	overflow: hidden;
+}
+
 .card-img-top {
-   width: 100% !important;
-   height: auto !important;
+   width: 100%;
+   height: auto;
+   object-fit: cover; 
+   aspect-ratio: 1 / 1;
+
+}
+
+.card-body {
+	display: flex;
+        flex-direction: column;
+        height: 100%;
 }
 
 a.cardHover:link {

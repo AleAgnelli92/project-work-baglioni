@@ -60,27 +60,26 @@
             <div class="titoloCatalogoHome">
                 <h4>Catalogo</h4>
             </div>
-            <div  class="row row-cols-auto gy-4 gx-4">
-                <div class="col col-md-4 col-sm">
-                      <div th:each= "album:${albumInHomePage}"  class="card flex-fill h-100 cardHover">
-                              <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="card-img-top" alt="Album Cover">
-                              <div class="card-body">
-                                  <h5 th:text= " ${album.titolo}" class="card-title prodotti"></h5>
-                                  <p th:text= " ${album.anno}" class="card-text prodotti"></p>
-                                  <p th:text= " ${album.prezzo}" class="card-text prodotti"></p>
-                                  <div class="bottoniHome">
-                                  	<a th:href= "@{/dettaglio(id=${album.id})} " role="button" class="btn btn-outline-dark">
-				                		<i class='fas fa-info-circle'></i>
-				                	</a>
-					                <a th:if="${album.quantita > 0}" th:href = "@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
-					                		<i class='fas fa-shopping-bag'></i>
-					                </a>
-                                  </div>
-                              </div>
-                              
-                      </div>
-                </div>
-            </div>
+            <div class="row row-cols-auto gy-4 gx-4">
+			    <div class="col col-md-4 col-sm" th:each="album:${albumInHomePage}">
+			        <div class="card flex-fill h-100 cardHover">
+			            <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="card-img-top" alt="Album Cover">
+			            <div class="card-body">
+			                <h5 th:text="${album.titolo}" class="card-title prodotti"></h5>
+			                <p th:text="${album.anno}" class="card-text prodotti"></p>
+			                <p th:text="${album.prezzo}" class="card-text prodotti"></p>
+			                <div class="bottoniHome">
+			                    <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark">
+			                        <i class='fas fa-info-circle'></i>
+			                    </a>
+			                    <a th:if="${album.quantita > 0}" th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
+			                        <i class='fas fa-shopping-bag'></i>
+			                    </a>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			</div>
             <div class="btnCatHome">
                 <a href="catalogo" role="button" class="btn btn-outline-dark">Scopri il catalogo</a>
             </div>
