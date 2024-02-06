@@ -11,6 +11,7 @@ import it.corso.service.ClienteService;
 import jakarta.servlet.http.HttpSession;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 // localhost:8080/login
@@ -30,7 +31,6 @@ public class LoginController {
 	    model.addAttribute("cliente", new Cliente()); 
 	    return "login";
 		
-		
 	}
 	
 	@PostMapping("/controllo")
@@ -41,6 +41,13 @@ public class LoginController {
 		if(!clienteService.controlloLogin(username, password, session))
 			return "redirect:/login";
 		
+		return "redirect:/personale";
+	}
+	
+	
+	@PostMapping("/registrazione")
+	public String formManager(@ModelAttribute("cliente") Cliente cliente) {
+		clienteService.registrazioneCliente(cliente);
 		return "redirect:/personale";
 	}
 	

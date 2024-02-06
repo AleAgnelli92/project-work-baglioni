@@ -58,7 +58,7 @@
           <h4>Crea un nuovo account</h4>
         </div>
         <div class="formLogin">
-          <form class="row gy-4" method="post" th:object="${cliente}">
+          <form class="row gy-4" method="post" action="login/registrazione" th:object="${cliente}">
             <div class="col-md-4">
               <label for="username" class="form-label">Username</label>
               <input type="text" th:field="*{username}" class="form-control" id="username" required>
