@@ -40,17 +40,6 @@ public class PersonaleController {
         return "personale";
     }
     
-//    @PostMapping
-//    public String modificaDatiPersonali(@ModelAttribute("cliente") Cliente cliente, HttpSession session) {
-//    	
-//    	System.out.println(cliente);
-//    	
-//    	clienteService.registrazioneCliente(cliente);
-//    	session.setAttribute("cliente", cliente);
-//    	
-//        return "redirect:/personale"; 
-//    }
-    
     @PostMapping
     public String modificaDatiPersonali(@ModelAttribute("cliente") Cliente cliente, HttpSession session) {
         // Recupera il cliente attualmente loggato dalla sessione

@@ -20,7 +20,6 @@ public class CarrelloController {
 	@Autowired
 	private CarrelloService carrelloService;
 	
-	private int quantitaProdotto = 1;
 
 	@SuppressWarnings("unchecked")
 	@GetMapping

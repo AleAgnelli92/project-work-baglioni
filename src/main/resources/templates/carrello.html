@@ -97,7 +97,7 @@
                     <h5>Pagamento</h5>
                     <p th:text="'Prezzo Totale: ' + ${totaleOrdineNelCarrello}" class="totalePagamento"></p>
                     <img src="img/paypal-icon.svg" class="payPal">
-                    <a class="btn btn-dark btnPayPal" type="button" onclick="mostraAlert()">Paga ora</a>
+                    <a class="btn btn-dark btnPayPal" type="button" th:href="@{/ordine/registraordine}">Paga ora</a>
                     <!-- QUESTO COMPARE SE SEI GIA' LOGGATO  -->
                     <div id="customAlert" class="custom-alert"> 
                       <span class="close" onclick="chiudiAlert()">&times;</span>
