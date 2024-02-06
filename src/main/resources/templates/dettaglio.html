@@ -92,7 +92,7 @@
 			                <p th:if="${album.quantita > 0}" th:text="'Pezzi disponibili: '  + ${album.quantita}" class="verde"></p>
 			                <p th:if="${album.quantita == 0}" class="rosso">Esaurito</p>
 			                <!-- Bottone Aggiunta al Carrello -->    
-			                <a th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
+			                <a th:if="${album.quantita > 0} "th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
 			                  <i class='fas fa-shopping-bag' style="font-size: 23px"></i>
 			                </a>
 		              	</div>
