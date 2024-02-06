@@ -68,14 +68,14 @@
 		    <div class="container mt-6">
 		        <div class="row">
 		            <!-- Immagine dell'album -->
-		            <div class="col-md-4">
+		            <div class="col-md-5">
 		                <div class="text-bg-dark divImgDettaglioAlbum">
 		                    <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="imgDettaglioAlbum img-fluid" alt="Baglioni Dettaglio">
 		                </div>
 		            </div>
 		
 		            <!-- Titolo, Anno di pubblicazione, Descrizione -->
-		            <div class="col-md-6">
+		            <div class="col-md-7">
 		                <h2 th:text="'Titolo: ' + ${album.titolo}" class="mb-3"></h2>
 		                <p th:text="'Prezzo: €' + ${album.prezzo}"></p> 
 		                 <br>
@@ -83,14 +83,7 @@
 		                
 		                <p th:text="'Anno: ' + ${album.anno}" class="text-muted"></p>
 		                <p th:text="'Descrizione: ' + ${album.descrizione}" class="text-muted"></p>
-		                <!-- Brani -->
-		                <p class="mt-4">Brani Inclusi:</p>
-		                <div class="NomiBrani">
-		                    <ul th:each="brano : ${dettagli}">
-		                        <li th:text="${brano.brano}"></li>
-		                        <li th:text="${brano.durata}"></li>
-		                    </ul>
-		                </div>
+		                
 		                <div>
 			                <p th:text="'Pezzi disponibili: '  + ${album.quantita}" class="verde"></p>
 			                <p class="rosso">Esaurito</p>
@@ -99,6 +92,24 @@
 			                  <i class='fas fa-shopping-bag' style="font-size: 23px"></i>
 			                </a>
 		              	</div>
+		           </div>
+		           <div>
+		           		<!-- Brani -->
+		                <table class="table mt-4">
+						  <thead>
+						    <tr>
+						      <th scope="col">Brani inclusi</th>
+						      <th scope="col">Durata</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr th:each="brano : ${dettagli}">
+						      <td th:text="${brano.brano}"></td>
+						      <td th:text="${brano.durata}"></td>
+						    </tr>
+						  </tbody>
+						
+						</table>
 		           </div>
 		        </div>
 		    </div>
