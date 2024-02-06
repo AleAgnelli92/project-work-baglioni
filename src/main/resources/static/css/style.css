@@ -4,7 +4,8 @@
 
 /* NAVBAR */
 .navbar {
-    transition: all 0.5s;
+    transition: all 0.0s !important;
+    padding: 0 !important;
 }
 
 .navbar-nav {
@@ -15,6 +16,8 @@
     margin: 0;
     font-size: 16px;
 }
+
+
 
 .icon-link {
     text-decoration: none;
@@ -38,6 +41,7 @@
         margin: 10px 0;
     }
     
+ 
     .navbar-nav .dropdown-menu {
        background-color: transparent !important; 
        box-shadow: none !important; 
@@ -49,7 +53,46 @@
 	.elementiNav {
 		padding-right: 20px !important;
 	}
+	
+	.navbar-toggler {
+	
+		background-color:  rgba(0, 0, 0, 0.85) !important;
+	} 
+	
+	
+	.cart-basket {
+	 position: absolute;
+    top: 370px !important;
+    right: 330px !important;
+	}
+	
+	.listaIcone {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		
+		
+	}
+	
+	.iconaCompressa {
+		color: black !important;
+	}
 }
+
+.cart-basket {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    width: 14px;
+    height: 14px;
+    color: #fff;
+    background-color: #418deb;
+    border-radius: 50%;
+    font-size: 10px;
+}
+
+
+
 
 
 

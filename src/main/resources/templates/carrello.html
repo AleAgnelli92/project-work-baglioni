@@ -19,7 +19,7 @@
 		<!--NAVBAR-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
             <div class="container-fluid elementiNav gx-0">
-              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler ms-auto  mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
@@ -62,22 +62,13 @@
                         <div class="col-md-3 colFotoCarrello col-sm">
                             <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="img-thumbnail img-fluid" alt="Prodotto Carrello"> <!--GESTITA DA TH-->
                         </div>
-                        <div class="col-md-5 colTitoloPrezzoCarrello col-sm">
-                            <h5 th:text="'Titolo: ' + ${album.titolo}"></h5> 
+                        <div class="col-md-7 colTitoloPrezzoCarrello col-sm">
+                            <p th:text="'Titolo: ' + ${album.titolo}"></p> 
                             <p th:text="'Prezzo: ' + ${album.prezzo}"></p>
                         </div>
-                        <div class="col-md-2 colQuantitaCarrello col-sm">
-						    <a th:href="@{/carrello/rimuovi(id=${album.id})}">
-						        <button type="submit" class="btn btn-outline-dark">-</button>
-						    </a>
-						    <p th:text="${quantitaProdotto}"></p>
-						    <a th:href="@{/carrello/aggiungi(id=${album.id})}">
-						        <button type="submit" class="btn btn-outline-dark">+</button>
-						    </a>
-						</div>
+                      
                         <div class="col-md-2 colCestinoCarrello col-sm">
                         		
-								
 								<div id="confirm">
 							      <p>Sei sicuro di voler eliminare questo prodotto dal carrello?</p>
 							      <div class = "close">

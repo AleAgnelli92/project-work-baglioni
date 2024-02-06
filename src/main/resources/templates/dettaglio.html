@@ -20,7 +20,7 @@
 			<!--NAVBAR-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
             <div class="container-fluid elementiNav gx-0">
-              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <button class="navbar-toggler ms-auto  mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
@@ -81,8 +81,8 @@
 			                <p th:if="${album.quantita > 0}" th:text="'Pezzi disponibili: '  + ${album.quantita}" class="verde"></p>
 			                <p th:if="${album.quantita == 0}" class="rosso">Esaurito</p>
 			                <!-- Bottone Aggiunta al Carrello -->    
-			                <a th:if="${album.quantita > 0} "th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark">
-			                  <i class='fas fa-shopping-bag' style="font-size: 23px"></i>
+			                <a th:if="${album.quantita > 0} "th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark " onClick="aggiornaContatore()">
+			                  <i class='fas fa-shopping-bag'></i>
 			                </a>
 		              	</div>
 		           </div>
