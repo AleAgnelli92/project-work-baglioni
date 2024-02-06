@@ -51,7 +51,6 @@ public class ClienteServiceImpl implements ClienteService {
 	        clienteEsistente.setCognome(cliente.getCognome());
 	        clienteEsistente.setEmail(cliente.getEmail());
 	        clienteEsistente.setUsername(cliente.getUsername());
-	        clienteEsistente.setPassword(cliente.getPassword());
 	        clienteEsistente.setData_di_nascita(cliente.getData_di_nascita());
 	        clienteEsistente.setNumero_di_telefono(cliente.getNumero_di_telefono());
 	        clienteEsistente.setNazione(cliente.getNazione());
