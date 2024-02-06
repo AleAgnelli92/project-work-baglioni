@@ -31,6 +31,29 @@
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 
+@media (max-width: 992px) {
+    .navbar-nav {
+        background-color: rgba(0, 0, 0, 0.85); /* Sfondo scuro */
+        position: absolute;
+        top: 56px; /* Altezza della navbar principale */
+        width: 100%;
+        text-align: center;
+    }
+    .navbar-nav .nav-item {
+        display: block;
+        margin: 10px 0;
+    }
+    .navbar-nav .nav-link {
+        color: white !important;
+    }
+    .navbar-nav .nav-item.dropdown:hover .nav-link {
+        color: white !important;
+    }
+    .navbar-nav .dropdown-menu {
+        background-color: transparent !important; /* Rimuove lo sfondo */
+        box-shadow: none !important; /* Rimuove l'ombra */
+    }
+}
 
 
 /* HOMEPAGE */
