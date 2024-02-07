@@ -39,7 +39,10 @@
                     <a th:href="@{/catalogo}" class="nav-link active" aria-current="page">Catalogo</a>
                   </li>
                   <li class="nav-item">
-                    <a th:href="@{/login}" class="icon-link text-secondary">
+                    <a th:if="${loggedIn}" class="icon-link text-secondary" th:href="@{/login}">
+                      <i class='far fa-user-circle'></i>
+                    </a>
+                    <a th:unless="${loggedIn}" class="icon-link text-secondary" th:href="@{/personale}">
                       <i class='far fa-user-circle'></i>
                     </a>
                   </li>
