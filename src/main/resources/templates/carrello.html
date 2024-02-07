@@ -100,24 +100,21 @@
                 </div>
 
                 <div class="col-md-4 colonnaPagamento">
-                    <h5>Pagamento</h5>
-                    <p th:text="'Prezzo Totale: ' + ${totaleOrdineNelCarrello}" class="totalePagamento"></p>
-                    <img src="img/paypal-icon.svg" class="payPal">
-                    <a th:if="${loggedIn}" class="btn btn-dark btnPayPal" th:href="@{/ordine/registraordine}" type="button" >Paga Ora</a>
-                    <a th:unless="${loggedIn}" class="btn btn-dark btnPayPal" th:href="@{/personale}" type="button">Paga ora</a>
-                    
-
-                    <!-- QUESTO COMPARE SE SEI GIA' LOGGATO  -->
-                    <div id="customAlert" class="custom-alert"> 
-                      <span class="close" onclick="chiudiAlert()">&times;</span>
-                      <p>Pagamento effettuato con successo!</p>
-                  	</div> 
-                  	<!-- QUESTO COMPARE SE NON SEI LOGGATO -->
-                  	<div id="customAlert" class="custom-alert"> 
-                      <span class="close" onclick="chiudiAlertAccesso()">&times;</span>
-                      <p>Accedi o registrati</p>
-                  	</div>
-                </div>
+				    <h5>Pagamento</h5>
+				    <p th:text="'Prezzo Totale: ' + ${totaleOrdineNelCarrello}" class="totalePagamento"></p>
+				    <img src="img/paypal-icon.svg" class="payPal">
+				<a id="pagaOraLoggedIn" th:href="@{/ordine/registraordine}" class="btn btn-dark btnPayPal" type="button" style="display: none;">Paga Ora</a>
+				<a id="pagaOraNotLoggedIn" th:href="@{login}" class="btn btn-dark btnPayPal" type="button">Paga ora</a>
+				
+				<script>
+				    if (loggedIn) {
+				        document.getElementById("pagaOraLoggedIn").style.display = "inline-block";
+				    } else {
+				        document.getElementById("pagaOraNotLoggedIn").style.display = "inline-block";
+				    }
+				</script>
+				    
+				</div>
             </div>
         </div>
 		

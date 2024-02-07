@@ -26,6 +26,8 @@ public class LoginController {
 	@GetMapping
     public String getPage(HttpSession session, Model model) {
         boolean loggedIn = session.getAttribute("cliente") != null;
+        if (loggedIn)
+	        return "redirect:/ordine/registraordine";
         model.addAttribute("loggedIn", loggedIn);
         model.addAttribute("cliente", new Cliente()); 
         return "login";
