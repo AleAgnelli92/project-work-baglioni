@@ -1,5 +1,7 @@
 package it.corso.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,7 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.corso.model.Cliente;
+import it.corso.model.Ordine;
 import it.corso.service.ClienteService;
+import it.corso.service.OrdineService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -18,6 +22,10 @@ public class PersonaleController {
 	
 	@Autowired
 	private ClienteService clienteService;
+	
+	@Autowired
+	private OrdineService ordineService;
+
 
     @GetMapping
     public String areaPersonale(HttpSession session, Model model) {
@@ -32,13 +40,18 @@ public class PersonaleController {
         // Passa il nome utente alla pagina dell'area riservata
         model.addAttribute("username", cliente.getUsername());
         model.addAttribute("cliente", cliente);
-
-        System.out.println(cliente);
-        System.out.println(clienteService.getClienteById(cliente.getId()));
         
+
+//        System.out.println(cliente);
+//        System.out.println(clienteService.getClienteById(cliente.getId()));
+        
+        // Recupera gli ordini dell'utente loggato
+		List<Ordine> ordini = (List<Ordine>) ordineService.getOrdini();
+        model.addAttribute("ordini", ordini);
         
         return "personale";
     }
+    
     
     @PostMapping
     public String modificaDatiPersonali(@ModelAttribute("cliente") Cliente cliente, HttpSession session) {

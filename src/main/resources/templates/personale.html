@@ -144,13 +144,21 @@
                     </div>
                     <div class="row rowOrdini">
                         
-                        <div class="col-md-5 colDataCarrello col-sm">
-                            <p>Data</p> <!--GESTITA DA TH-->
+                        <div th:each="ordine : ${ordini}" class="col-md-12 ordine">
+            			
+           			  
+                         <div th:if="${ordine.cliente.id == cliente.id}" class="col-md-5 colDataCarrello col-sm">
+                            <p>Data</p> 
+                            <p th:text="${ordine.data}"> </p>
                         </div>
                        
-                        <div class="col-md-5 colPrezzoCarrello col-sm">
-                            <p>Prezzo</p> <!--GESTITA DA TH-->
+                        <div th:if="${ordine.cliente.id == cliente.id}" class="col-md-5 colPrezzoCarrello col-sm">
+                            <p >Prezzo</p> 
+                            <p th:text="${ordine.importo}"> </p>
                         </div>
+                    </div>
+                        
+                        
                         <div class="col-md-2 colDettaglioCarrello col-sm">
                             <button class="lenteOrdini text-dark btn btn-light" onclick="mostraAlert()"><i class='fas fa-search'></i></button>
                             <div id="customAlert" class="custom-alert">
