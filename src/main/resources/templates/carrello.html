@@ -51,6 +51,9 @@
         <div class="text-bg-dark divImgCarrello">
             <img src="img/baglioniCarrello.jpg" class="imgCarrello img-fluid" alt="Baglioni Carrello">
         </div>
+        <div>
+		    	<a th:href="@{/catalogo}" class="tornaCatalogo"><i class='fas fa-angle-left'></i> Torna al catalogo</a>
+		    </div>
         <!--CARD PRODOTTO SELEZIONATO-->
         <div class="container">
             <div class="titoloCarrello">
@@ -97,7 +100,10 @@
                     <h5>Pagamento</h5>
                     <p th:text="'Prezzo Totale: ' + ${totaleOrdineNelCarrello}" class="totalePagamento"></p>
                     <img src="img/paypal-icon.svg" class="payPal">
-                    <a class="btn btn-dark btnPayPal" type="button" th:href="@{/ordine/registraordine}">Paga ora</a>
+                    <a th:if="${loggedIn}" class="btn btn-dark btnPayPal" th:href="@{/ordine/registraordine}" type="button" >Paga Ora</a>
+                    <a th:unless="${loggedIn}" class="btn btn-dark btnPayPal" th:href="@{/personale}" type="button">Paga ora</a>
+                    
+
                     <!-- QUESTO COMPARE SE SEI GIA' LOGGATO  -->
                     <div id="customAlert" class="custom-alert"> 
                       <span class="close" onclick="chiudiAlert()">&times;</span>
