@@ -15,6 +15,9 @@ public class OrdineServiceImpl implements OrdineService {
 	@Autowired
 	private OrdineDao ordineDao;
 	
+	@Autowired
+	private AlbumService albumService;
+	
 	@Override
 	public List<Ordine> getOrdini() {
 		return (List<Ordine>) ordineDao.findAll();
@@ -36,6 +39,13 @@ public class OrdineServiceImpl implements OrdineService {
 		ordine.setCliente(cliente);
 		ordine.setData(LocalDateTime.now());
 		ordineDao.save(ordine);
+		
+		for (Album album : albumsNelCarrello) {
+	        Album albumInStock = albumService.getAlbumById(album.getId());
+	        int nuovaQuantita = albumInStock.getQuantita() - 1;
+	        albumInStock.setQuantita(nuovaQuantita);
+	        albumService.salvaAlbum(albumInStock);
+	    }
 	}
 	
 	@Override

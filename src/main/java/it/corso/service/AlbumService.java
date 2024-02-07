@@ -11,4 +11,5 @@ public interface AlbumService {
 	
 	Album getAlbumById(int id);
 	List<Album> getAlbums();
+	void salvaAlbum(Album album);
 }

@@ -26,4 +26,8 @@ public class AlbumServiceImpl implements AlbumService {
 		return (List<Album>) albumDao.findAll();
 	}
 	
+	@Override
+    public void salvaAlbum(Album album) {
+        albumDao.save(album);
+    }
 }
