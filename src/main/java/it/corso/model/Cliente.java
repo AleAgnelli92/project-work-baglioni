@@ -15,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "cliente")
@@ -23,13 +24,18 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	@Column
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi nel campo nome")
     private String nome;
 	@Column
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi nel campo cognome")
     private String cognome;
 	@Column
+	@Pattern(regexp = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}", message = "L'email deve essere in un formato valido")
     private String email;
 	@Column
+	@Pattern(regexp = "[a-zA-Z0-9.]{1,20}", message = "Caratteri non ammessi per lo username")
     private String username;
 	@Column
     private String password;
@@ -37,18 +43,25 @@ public class Cliente {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate data_di_nascita;
 	@Column
+	@Pattern(regexp = "\\d{10}", message = "Il numero di telefono deve contenere esattamente 10 numeri")
     private String numero_di_telefono;
 	@Column
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi nel campo nazione")
     private String nazione;
 	@Column
+	@Pattern(regexp = "[a-zA-Z\\s']{2}", message = "Scrivi la provincia in questo formato 'XX'")
     private String provincia;
 	@Column
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi nel campo indirizzo")
     private String indirizzo;
 	@Column
+	@Pattern(regexp = "[a-zA-Z0-9/]{1,5}", message = "Il campo civico può contenere da 1 a 5 caratteri")
     private String civico;
 	@Column
+	@Pattern(regexp = "\\d{5}", message = "Il CAP deve contenere esattamente 5 numeri")
     private String cap;
 	@Column
+	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi nel campo città")
     private String citta;
 	
 	@OneToMany

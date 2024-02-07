@@ -3,12 +3,14 @@ package it.corso.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.corso.model.Cliente;
 import it.corso.service.ClienteService;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -46,7 +48,11 @@ public class LoginController {
 	
 	
 	@PostMapping("/registrazione")
-	public String formManager(@ModelAttribute("cliente") Cliente cliente) {
+	public String formManager(@Valid @ModelAttribute("cliente") Cliente cliente, BindingResult result) {
+		
+		if(result.hasErrors())
+			return "/login";
+		
 		clienteService.registrazioneCliente(cliente);
 		return "redirect:/personale";
 	}
