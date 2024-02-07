@@ -24,14 +24,12 @@ public class LoginController {
 	
 
 	@GetMapping
-	public String getPage(HttpSession session, Model model) {
-	    if (session.getAttribute("cliente") != null)
-	        return "redirect:/personale";
-	    
-	    model.addAttribute("cliente", new Cliente()); 
-	    return "login";
-		
-	}
+    public String getPage(HttpSession session, Model model) {
+        boolean loggedIn = session.getAttribute("cliente") != null;
+        model.addAttribute("loggedIn", loggedIn);
+        model.addAttribute("cliente", new Cliente()); 
+        return "login";
+    }
 	
 	@PostMapping("/controllo")
 	public String loginManager(@RequestParam("username") String username,
