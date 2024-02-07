@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.corso.model.Album;
 import it.corso.model.Cliente;
+import it.corso.service.CarrelloService;
 import it.corso.service.OrdineService;
 import jakarta.servlet.http.HttpSession;
 
@@ -19,12 +20,16 @@ public class OrdineController {
 	
 	@Autowired
 	private OrdineService ordineService;
+	@Autowired
+	private CarrelloService carrelloService;
 	
 	@GetMapping("/registraordine")
 	public String registraOrdine(HttpSession session)
 	{
 		Cliente cliente = (Cliente) session.getAttribute("cliente");
 		List<Album> albumsNelCarrello = (List<Album>) session.getAttribute("carrello");
+		
+		carrelloService.svuotaCarrello(session);
 		ordineService.registraOrdine(cliente, albumsNelCarrello);
 		return "redirect:/personale";
 	}

@@ -43,5 +43,9 @@ public class CarrelloServiceImpl implements CarrelloService {
         }
         session.setAttribute("carrello", carrello);
 	}
+	
+	public void svuotaCarrello(HttpSession session) {
+	    session.removeAttribute("carrello");
+	}
 
 }
