@@ -163,7 +163,7 @@
     	height: auto !important;
     
     }
-    .catalogoHome {
+    .titoloPagina {
         height: 700px !important;
     }
     
@@ -182,7 +182,7 @@
     
 }
 
-.titoloCatalogoHome {
+.titoloPagina {
     display: flex;
     justify-content: center;
     align-items: center;
