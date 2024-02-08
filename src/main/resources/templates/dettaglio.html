@@ -18,36 +18,48 @@
     </head>
 	<body>
 			<!--NAVBAR-->
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
-            <div class="container-fluid elementiNav gx-0">
-              <button class="navbar-toggler ms-auto  mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark" id="navBack">
+            <div class="container-fluid elementiNav ms-3 me-lg-3 px-0">
+            	<a class="navbar-brand " th:href="@{/}">
+			      <img src="img/ClaudioBaglioni-firma.png" alt="Bootstrap" width="150" height="auto">
+			    </a>
+              <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto me-4">
+                <ul class="navbar-nav ms-auto text-uppercase">
                   <li class="nav-item">
-                    <a th:href="@{/}" class="nav-link text-secondary">Home</a>
+                    <a th:href="@{/}" class="nav-link text-light" >Home</a>
                   </li>
                   <li class="nav-item">
-                    <a th:href="@{/bio}" class="nav-link text-secondary">Bio</a>
+                    <a th:href="@{/bio}" class="nav-link text-light">Bio</a>
                   </li>
                   <li class="nav-item">
-                    <a th:href="@{/catalogo}" class="nav-link text-secondary">Catalogo</a>
+                    <a th:href="@{/catalogo}" class="nav-link text-light">Catalogo</a>
                   </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a th:if="${loggedIn}" class="icon-link text-secondary" th:href="@{/login}">
-                      <i class='far fa-user-circle'></i>
+                    <a th:if="${loggedIn}" class="icon-link text-light" th:href="@{/login}">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15 19C15 16.2386 12.7614 14 10 14C7.23858 14 5 16.2386 5 19M10 11C8.34315 11 7 9.65685 7 8C7 6.34315 8.34315 5 10 5C11.6569 5 13 6.34315 13 8C13 9.65685 11.6569 11 10 11ZM19 4.19995V15.8C19 16.9201 19.0002 17.4802 18.7822 17.908C18.5905 18.2844 18.2841 18.5902 17.9078 18.782C17.48 19 16.9203 19 15.8002 19H4.2002C3.08009 19 2.51962 19 2.0918 18.782C1.71547 18.5902 1.40973 18.2844 1.21799 17.908C1 17.4802 1 16.9201 1 15.8V4.19995C1 3.07985 1 2.51986 1.21799 2.09204C1.40973 1.71572 1.71547 1.40973 2.0918 1.21799C2.51962 1 3.08009 1 4.2002 1H15.8002C16.9203 1 17.48 1 17.9078 1.21799C18.2841 1.40973 18.5905 1.71572 18.7822 2.09204C19.0002 2.51986 19 3.07985 19 4.19995Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
                     </a>
-                    <a th:unless="${loggedIn}" class="icon-link text-secondary" th:href="@{/personale}">
-                      <i class='far fa-user-circle'></i>
+                    <a th:unless="${loggedIn}" class="icon-link text-light" th:href="@{/personale}">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15 19C15 16.2386 12.7614 14 10 14C7.23858 14 5 16.2386 5 19M10 11C8.34315 11 7 9.65685 7 8C7 6.34315 8.34315 5 10 5C11.6569 5 13 6.34315 13 8C13 9.65685 11.6569 11 10 11ZM19 4.19995V15.8C19 16.9201 19.0002 17.4802 18.7822 17.908C18.5905 18.2844 18.2841 18.5902 17.9078 18.782C17.48 19 16.9203 19 15.8002 19H4.2002C3.08009 19 2.51962 19 2.0918 18.782C1.71547 18.5902 1.40973 18.2844 1.21799 17.908C1 17.4802 1 16.9201 1 15.8V4.19995C1 3.07985 1 2.51986 1.21799 2.09204C1.40973 1.71572 1.71547 1.40973 2.0918 1.21799C2.51962 1 3.08009 1 4.2002 1H15.8002C16.9203 1 17.48 1 17.9078 1.21799C18.2841 1.40973 18.5905 1.71572 18.7822 2.09204C19.0002 2.51986 19 3.07985 19 4.19995Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a th:href="@{/carrello}" class="icon-link text-secondary">
-                      <i class='fas fa-shopping-bag'></i>
+                    <a th:href="@{/carrello}" class="icon-link text-light">
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M15 15C13.8954 15 13 15.8954 13 17C13 18.1046 13.8954 19 15 19C16.1046 19 17 18.1046 17 17C17 15.8954 16.1046 15 15 15ZM15 15H7.29395C6.83269 15 6.60197 15 6.41211 14.918C6.24466 14.8456 6.09934 14.7288 5.99349 14.5802C5.87348 14.4118 5.82609 14.1863 5.72945 13.7353L3.27148 2.26477C3.17484 1.81376 3.12587 1.58825 3.00586 1.4198C2.90002 1.27123 2.75525 1.15441 2.5878 1.08205C2.39794 1 2.16779 1 1.70653 1H1M4 4H16.8732C17.595 4 17.9557 4 18.1979 4.15036C18.4101 4.28206 18.5652 4.48838 18.6329 4.72876C18.7102 5.00319 18.611 5.34996 18.411 6.04346L17.0264 10.8435C16.9068 11.2581 16.8469 11.4655 16.7256 11.6193C16.6185 11.7551 16.4772 11.8608 16.3171 11.926C16.1356 12 15.9199 12 15.4883 12H5.73047M6 19C4.89543 19 4 18.1046 4 17C4 15.8954 4.89543 15 6 15C7.10457 15 8 15.8954 8 17C8 18.1046 7.10457 19 6 19Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>
                     </a>
                   </li>
                 </ul>
+                
               </div>
             </div>
         </nav>
