@@ -1,36 +1,34 @@
-const navHome = document.querySelector('.navbar');
-
+const navbar = document.querySelector('.navbar');
 var confirmDiv = document.getElementById("confirm");
+let mediaQuery = window.matchMedia('(min-width: 992px)')
 
-
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY >= 56) {
-        navHome.classList.add('navbar-scrolled')
-    } else if (window.scrollY < 56) {
-        navHome.classList.remove('navbar-scrolled')
-    }
-})
-
-document.querySelector('.navbar')[
-    document.addEventListener ? 'addEventListener' : 'attachEvent'
-]('click', function() {
-    this.style.backgroundColor = this.style.backgroundColor === 'rgba(0, 0, 0, 0.85)' ?
-        'transparent' : 'rgba(0, 0, 0, 0.85)';
- 
-});
-
-
-function mostraAlert() {
-    var customAlert = document.getElementById('customAlert');
-    customAlert.style.display = 'block';
+function noScrollMobile(mediaQuery) {
+	if (mediaQuery.matches) {
+		window.addEventListener('scroll', () => {
+		    if (window.scrollY >= 56) {
+		        navbar.classList.add('navbar-scrolled');
+		    } else if (window.scrollY < 56) {
+		        navbar.classList.remove('navbar-scrolled');
+		    }
+		});
+	}
 }
 
-function chiudiAlert() {
-    var customAlert = document.getElementById('customAlert');
-    customAlert.style.display = 'none';
+mediaQuery.addEventListener('change', noScrollMobile);
 
-    window.location.href = "personale";
+noScrollMobile(mediaQuery);
+
+document.querySelector('.navbar-toggler')[
+    document.addEventListener ? 'addEventListener' : 'attachEvent'
+]('click', function() {
+    navbar.style.backgroundColor = navbar.style.backgroundColor === 'rgba(0, 0, 0, 0.85)' ?
+        'transparent' : 'rgba(0, 0, 0, 0.85)';
+        navbar.style
+});
+
+function mostraAlertOrdini() {
+    var customAlert = document.getElementById('customAlert');
+    customAlert.style.display = 'block';
 }
 
 function chiudiAlertAccesso() {
@@ -53,14 +51,14 @@ function confermaEliminazione(albumId) {
     
     
 
-      function showConfirm() {
+function showConfirm() {
          confirmDiv.style.display = "block";
       }
-      function closeConfirm() {
+function closeConfirm() {
          confirmDiv.style.display = "none";
       }
     
-    
+
  
 
 

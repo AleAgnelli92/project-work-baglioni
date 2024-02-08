@@ -36,6 +36,8 @@
 
 @media (max-width: 992px) {
     
+    
+	
     .navbar-nav .nav-item {
         display: block;
         margin: 10px 0;
@@ -50,14 +52,12 @@
  		box-shadow: none;
 	}
 	
-	.elementiNav {
-		padding-right: 20px !important;
-	}
-	
 	.navbar-toggler {
-	
-		background-color:  rgba(0, 0, 0, 0.85) !important;
+		z-index: 1;
+		background-color: rgba(0, 0, 0, 0.85) !important;
+		margin-right: 20px !important;
 	} 
+	
 	
 	
 	.cart-basket {
@@ -77,6 +77,12 @@
 	.iconaCompressa {
 		color: black !important;
 	}
+	
+	.show {
+		width: 100% !important;
+		padding-right: 0 !important;
+		
+	} 
 }
 
 .cart-basket {
@@ -132,7 +138,7 @@
 
 @media (max-width: 600px) {
     .card-title {
-        font-size: 50px; 
+        font-size: 40px; 
     }
 }
 
@@ -177,7 +183,7 @@ p.prodotti {
 
 .card-img-top {
    width: 100%;
-   height: auto;
+   height: 100%;
    object-fit: cover; 
    aspect-ratio: 1 / 1;
 
@@ -690,6 +696,9 @@ p.cardCatalogo {
     font-size: 12px;
 }
 
+
+ 
+
 .lenteOrdini {
     background-color: white !important;
     border: 2px solid transparent;
@@ -722,6 +731,13 @@ p.cardCatalogo {
     justify-content:space-between;
     align-items:flex-start;
 }
+
+@media (max-width: 768px) {
+    h2 {
+    	margin-top: 20px !important;
+    }
+}
+
 @media (max-width: 560px) {
     .divImgDettaglio {
         height: 200px !important;

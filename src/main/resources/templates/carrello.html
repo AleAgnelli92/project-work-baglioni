@@ -47,6 +47,7 @@
                     </a>
                   </li>
                 </ul>
+                
               </div>
             </div>
         </nav>
@@ -92,11 +93,12 @@
                         
                         
                     </div>
+                    <!-- 
                     <hr class="hr" />
                     <div class="row rowIndirizzo">
                         <h5 >Recap dei dati:</h5> 
                         <p></p>
-                    </div>
+                    </div>  -->
                 </div>
 
                 <div class="col-md-4 colonnaPagamento">
@@ -106,14 +108,15 @@
 				<a id="pagaOraLoggedIn" th:href="@{/ordine/registraordine}" class="btn btn-dark btnPayPal" type="button" style="display: none;">Paga Ora</a>
 				<a id="pagaOraNotLoggedIn" th:href="@{login}" class="btn btn-dark btnPayPal" type="button">Paga ora</a>
 				
+				
 				<script>
-				    if (loggedIn) {
-				        document.getElementById("pagaOraLoggedIn").style.display = "inline-block";
-				    } else {
-				        document.getElementById("pagaOraNotLoggedIn").style.display = "inline-block";
-				    }
+					if (loggedIn) {
+						document.getElementById("pagaOraLoggedIn").style.display = "inline-block";
+					} else {
+						document.getElementById("pagaOraNotLoggedIn").style.display = "inline-block";
+					}
 				</script>
-				    
+				
 				</div>
             </div>
         </div>
