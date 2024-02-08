@@ -26,6 +26,13 @@ document.querySelector('.navbar-toggler')[
         navbar.style
 });
 
+function chiudiAlert() {
+    var customAlert = document.getElementById('customAlert');
+    customAlert.style.display = 'none';
+
+    window.location.href = "personale";
+}
+
 function mostraAlertOrdini() {
     var customAlert = document.getElementById('customAlert');
     customAlert.style.display = 'block';

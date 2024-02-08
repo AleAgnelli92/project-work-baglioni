@@ -107,13 +107,28 @@
 				    <img src="img/paypal-icon.svg" class="payPal">
 				<a id="pagaOraLoggedIn" th:href="@{/ordine/registraordine}" class="btn btn-dark btnPayPal" type="button" style="display: none;">Paga Ora</a>
 				<a id="pagaOraNotLoggedIn" th:href="@{login}" class="btn btn-dark btnPayPal" type="button">Paga ora</a>
-				
+					<div id="customAlert" class="custom-alert">
+                      <span class="close" onclick="chiudiAlert()">&times;</span>
+                      <p>Pagamento effettuato con successo!</p>
+                  </div>
+                  <div id="confirmLog" style="display: none;">
+							      <p>Non hai effettuato il login. Se non hai un account registrati.</p>
+							      <div class = "close">
+							         <button th:onclick="@{login}" class="btn btn-dark btnPopUp"> Accedi </button> <!-- GESTIRE LINK -->
+							         <button th:onclick = "@{login}" class="btn btn-dark btnPopUp"> Registrati </button> <!-- GESTIRE LINK -->
+							      </div> 
+							   </div>
+           
 				
 				<script>
 					if (loggedIn) {
 						document.getElementById("pagaOraLoggedIn").style.display = "inline-block";
+						//pop up conferma pagamento
+						document.getElementById("customAlert").style.display = "inline-block";
 					} else {
 						document.getElementById("pagaOraNotLoggedIn").style.display = "inline-block";
+						//pop up non sei loggato
+						document.getElementById("confirmLog").style.display = "inline-block";
 					}
 				</script>
 				
