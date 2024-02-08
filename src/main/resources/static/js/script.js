@@ -26,11 +26,28 @@ document.querySelector('.navbar-toggler')[
         navbar.style
 });
 
-function chiudiAlert() {
+function mostraAlertLog() {
+	var customAlert = document.getElementById('customAlert');
+	customAlert.style.display = 'block';
+						}
+						
+function mostraAlertNotLog() {
+	var log = document.getElementById('alertLog');
+	log.style.display = 'block';
+						}
+						
+function chiudiAlertLog() {
     var customAlert = document.getElementById('customAlert');
     customAlert.style.display = 'none';
 
-    window.location.href = "personale";
+    window.location.href = "/ordine/registraordine";
+}
+
+function chiudiAlertNotLog() {
+    var customAlert = document.getElementById('alertLog');
+    customAlert.style.display = 'none';
+
+    window.location.href = "login";
 }
 
 function mostraAlertOrdini() {
@@ -64,8 +81,6 @@ function showConfirm() {
 function closeConfirm() {
          confirmDiv.style.display = "none";
       }
-    
-
  
 
 
