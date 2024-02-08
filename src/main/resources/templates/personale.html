@@ -153,25 +153,11 @@
 	                    	<p >Prezzo</p> 
 	                    </div>
 
-                    <div class="row rowOrdini">
-                        
-                        <div th:each="ordine : ${ordini}" class="col-md-12 ordine">
-            			
-           			  
-                         <div th:if="${ordine.cliente.id == cliente.id}" class="col-md-5 colDataCarrello col-sm">
-                            <p>Data</p> 
-                            <p th:text="${#temporals.format(ordine.data, 'dd-MM-yyyy HH:mm')}"> </p>
-                        </div>
-                       
-                        <div th:if="${ordine.cliente.id == cliente.id}" class="col-md-5 colPrezzoCarrello col-sm">
-                            <p >Prezzo</p> 
-                            <p th:text="${ordine.importo}"> </p>
-                        </div>
-
+                  
                     </div>
                     <div class="row rowOrdini flex" th:each="ordine : ${ordini}">
 	                         <div th:if="${ordine.cliente.id == cliente.id}" class="col-md-5 colDataCarrello">
-	                            <p th:text="${ordine.data}"> </p>
+	                            <p th:text="${#temporals.format(ordine.data, 'dd-MM-yyyy HH:mm')}"> </p>
 	                        </div>
 	                       
 	                        <div th:if="${ordine.cliente.id == cliente.id}" class="col-md-5 colPrezzoCarrello">
