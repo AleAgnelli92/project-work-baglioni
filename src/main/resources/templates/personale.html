@@ -142,7 +142,7 @@
                     <div class="titoloOrdini row"> 
                         <h4 class="col-md-10">I miei ordini</h4>
                     </div>
-<<<<<<< Updated upstream
+
                  
 			    
                     <div class="intestazione row row-cols-1">
@@ -152,7 +152,7 @@
 	                    <div class="col col-md-5 col-sm colPrezzoCarrello">
 	                    	<p >Prezzo</p> 
 	                    </div>
-=======
+
                     <div class="row rowOrdini">
                         
                         <div th:each="ordine : ${ordini}" class="col-md-12 ordine">
@@ -167,7 +167,7 @@
                             <p >Prezzo</p> 
                             <p th:text="${ordine.importo}"> </p>
                         </div>
->>>>>>> Stashed changes
+
                     </div>
                     <div class="row rowOrdini flex" th:each="ordine : ${ordini}">
 	                         <div th:if="${ordine.cliente.id == cliente.id}" class="col-md-5 colDataCarrello">
