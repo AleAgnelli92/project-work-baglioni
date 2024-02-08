@@ -107,7 +107,6 @@
     border: none !important;
     background-color: white !important;
     width: 100% !important;
-    height: 300px !important;
     overflow: hidden;
 }
 
@@ -162,8 +161,25 @@
     	width:100px;
     	font-size: 10px !important;
     }
+    
+    .imgHome {
+    	height: 400px !important;
+    }
 }
 
+@media (min-width: 768px) {
+   
+    .imgHome {
+    	height: auto !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .imgHome {
+  
+    height: 300px !important;
+    }
+}
 
 .titoloCatalogoHome {
     display: flex;
