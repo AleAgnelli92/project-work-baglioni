@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import it.corso.model.Album;
 import it.corso.model.Cliente;
 import it.corso.model.Ordine;
 import it.corso.service.ClienteService;
@@ -27,7 +28,8 @@ public class PersonaleController {
 	private OrdineService ordineService;
 
 
-    @GetMapping
+    @SuppressWarnings("unchecked")
+	@GetMapping
     public String areaPersonale(HttpSession session, Model model) {
         Cliente cliente = (Cliente) session.getAttribute("cliente");
 
@@ -42,12 +44,13 @@ public class PersonaleController {
         model.addAttribute("cliente", cliente);
         
 
-//        System.out.println(cliente);
-//        System.out.println(clienteService.getClienteById(cliente.getId()));
-        
         // Recupera gli ordini dell'utente loggato
 		List<Ordine> ordini = (List<Ordine>) ordineService.getOrdini();
         model.addAttribute("ordini", ordini);
+        
+        // Recuperare gli album nel carrello
+        List<Album> carrello = (List<Album>) session.getAttribute("carrello");
+		model.addAttribute("albumNelCarrello", carrello);
         
         return "personale";
     }
@@ -68,5 +71,29 @@ public class PersonaleController {
         
         return "redirect:/personale"; 
     }
-
+    
+    
+//    @SuppressWarnings("unchecked")
+//	@GetMapping("/visualizzaOrdini")
+//	  public String visualizzaOrdini(Model model, HttpSession session) {
+//    	
+//    	List<Album> carrello = (List<Album>) session.getAttribute("carrello");
+//		model.addAttribute("albumNelCarrello", carrello);
+//	      
+//		double totaleOrdine = calcolaTotaleOrdine(carrello);
+//        model.addAttribute("totaleOrdineNelCarrello", String.format("%.2f", totaleOrdine));
+//	      
+//        return "personale";
+//  }
+//    
+//    private double calcolaTotaleOrdine(List<Album> carrello) {
+//        double totale = 0;
+//        if (carrello != null) {
+//            for (Album album : carrello) {
+//                totale += album.getPrezzo();
+//            }
+//        }
+//		return totale;
+//
+//    }
 }

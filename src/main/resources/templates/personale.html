@@ -138,43 +138,49 @@
                   </div>
                   
                   
+                  
                 <div class="col-md-6">
                     <div class="titoloOrdini row"> 
                         <h4 class="col-md-10">I miei ordini</h4>
                     </div>
 
-                 
-			    
                     <div class="intestazione row row-cols-1">
-                    	<div  class="col col-md-5 col-sm colDataCarrello">
+                    	<div  class="col col-md-4 col-sm colDataCarrello">
 	                    	<p>Data</p> 
 	                    </div>
-	                    <div class="col col-md-5 col-sm colPrezzoCarrello">
+	                    <div class="col col-md-4 col-sm colPrezzoCarrello">
 	                    	<p >Prezzo</p> 
 	                    </div>
-
-                  
+	                    
+	                    <div class="col col-md-4 col-sm colPrezzoCarrello">
+	                    	<p >Album</p> 
+	                    </div>
                     </div>
-                    <div class="row rowOrdini flex" th:each="ordine : ${ordini}">
-	                         <div th:if="${ordine.cliente.id == cliente.id}" class="col-md-5 colDataCarrello">
-	                            <p th:text="${#temporals.format(ordine.data, 'dd-MM-yyyy HH:mm')}"> </p>
-	                        </div>
-	                       
-	                        <div th:if="${ordine.cliente.id == cliente.id}" class="col-md-5 colPrezzoCarrello">
-	                            <p th:text="${ordine.importo}"> </p>
-	                        </div>
-	                        <div class="col-md-2 colDettaglioCarrello col-sm">
-	                            <button class="lenteOrdini text-dark btn btn-light" onclick="mostraAlertOrdini()"><i class='fas fa-search'></i></button>
+                   
+                    <div th:each="ordine : ${ordini}" class="ordine-container">
+					    <div th:if="${ordine.cliente.id == cliente.id}" class="row rowOrdini flex">
+					        <div class="col-md-4 colDataCarrello">
+					            <p th:text="${#temporals.format(ordine.data, 'dd-MM-yyyy HH:mm')}"> </p>
+					        </div>
+					       
+					        <div class="col-md-4 colPrezzoCarrello">
+					            <p th:text="'€ ' + ${ordine.importo}"></p>
+					        </div>
+					        
+					        <div class="col-md-4">
+					            <p th:each="album : ${ordine.albums}" th:text="${album.titolo}"></p>
+					        </div>
+					    </div>
+					</div>
+	                            <!-- <button class="lenteOrdini text-dark btn btn-light" onclick="mostraAlertOrdini()"><i class='fas fa-search'></i></button>
 	                            <div id="customAlert" class="custom-alert">
-			                      <span class="close" onclick="chiudiAlertOrdini()">&times;</span>
-			                      <p>Qui dentro deve mostrare il riepilogo</p>
-			                  </div>
-                        	</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+			                       <span class="close" onclick="chiudiAlertOrdini()">&times;</span> -->
+			          
+						    </div>
+			             </div>
+                       </div>
+                    
+           
         <!-- FOOTER -->
         <footer class="text-center text-white bgFooterHome">
             <!-- Grid container -->
