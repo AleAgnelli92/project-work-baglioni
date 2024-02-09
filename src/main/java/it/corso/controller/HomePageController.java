@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class HomePageController {
 	@Autowired
 	private AlbumService albumService;
-	private static final int numeriProdottiHomePage = 3;
+	private static final int numeriProdottiHomePage = 4;
 	@GetMapping
     public String home(Model model) {
 		//recuperiamo l elenco di tutti gli album dal service

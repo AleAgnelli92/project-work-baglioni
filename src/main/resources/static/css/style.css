@@ -6,6 +6,19 @@
 .navbar {
     transition: all 0.0s !important;
     padding: 0 !important;
+    height: 100px;
+}
+
+.nonAttivo {
+	color: rgba(255,255,255,0.5) ;
+}
+
+.iconaNonAttiva {
+	opacity: 0.5 ;
+}
+
+.iconaNonAttiva:hover {
+	opacity: 1 ;
 }
 
 .navbar-nav {
@@ -23,12 +36,17 @@
     padding: 8px;
 }
 
-.nav-link:hover, .icon-link:hover {
+.nonAttivo:hover {
     color: white !important;
 }
 
+.active {
+	color: white;
+	text-decoration: underline !important;
+}
+
 .navbar-scrolled {
-    background-color: RGBA(10,42,54,0.65);
+    background-color: RGBA(23,75,133,0.4);
 }
 
 @media (max-width: 992px) {
@@ -90,104 +108,74 @@
     overflow: hidden;
 }
 
+.imgHome {
+	background-color: #174B85;
+	
+}
+
 .centered {
     position: absolute !important;
     top: 25% !important;
     left: 5% !important;
     padding: 0 !important;
   }
+  
+  .soLong {
+  	font-style: italic;
+  }
 
 .immagineAlto {
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
+	opacity: 0.5;
+	
 }
 
 .testoImgHome {
-	/*width: 150px;*/
 	text-align: justify;
 	margin-left: 7px;
-	font-size: 12px;
+	font-size: 18px;
 	margin-bottom: 5px;
 }
 
 .btnImgHome {
 	margin-left: 7px;
-	width: 80px;
+	width: 200px;
+	height: 50px;
 	padding: 5px !important;
-	font-size: 8px !important;
-	margin-top: 5px !important;
+	font-size: 18px !important;
+	margin-top: 25px !important;
+	
 }
 
 .btnImgBio {
 	margin-left: 7px;
 	padding: 5px !important;
-	font-size: 8px !important;
+	font-size: 18px !important;
 	margin-top: 5px !important;
 }
 
 .card-text {
-    font-size: 15px;
+    font-size: 40px;
     margin-left: 7px;
     margin-bottom: -15px;
     overflow: hidden; 
     text-overflow: ellipsis;
 }
 
-
-@media (min-width: 576px) {
-   .testoImgHome {
-   	font-size: 15px;
-   }
-    
-    .autografo {
-    	width: 200px;
-    }
-    
-   
-    .btnImgHome {
-    	width:100px;
-    	font-size: 10px !important;
-    }
-    
-    .imgHome, .imgBio {
-    	height: 400px !important;
-    }
-    
-    
-}
-
-@media (min-width: 768px) {
-   
-    .imgHome, .imgBio {
-    	height: auto !important;
-    
-    }
-    .titoloPagina {
-        height: 700px !important;
-    }
-    
-    .btnImgHome {
-    	width:120px;
-    	font-size: 12px !important;
-    	margin-top: 10px !important;
-    }
-}
-
-@media (max-width: 575px) {
-    .imgHome, .imgBio {
-  
-    height: 300px !important;
-    }
-    
-}
-
 .titoloPagina {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     font-style: italic;
+}
+
+.titoloPagina h4 {
+	 font-size: 40px !important;
+	 color: #174B85;
 }
 
 .catalogoHome {
@@ -195,32 +183,40 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    
 }
 
+.albumHomePage {
+	margin-left: 100px !important;
+	margin-right: 100px !important;
+}
 
 .card {
     border: none;
 }
 
 h5.prodotti {
-    color: #0A2A36;
+    color: #174B85;
     margin-bottom: 0;
+    font-size: 15px;
 }
 
 .prezzo {
     margin: 0;
     color: #1E84A8;
+    font-size: 15px;
 }
 
 .tipologia {
 	color: RGBA(10,42,54,0.65)!important;
 	margin-left: 0;
 	margin-bottom: 2px;
+	font-size: 12px;
 }
 
 .cardHover {
 	overflow: hidden;
+	border: none !important;
 }
 
 .card-img-top {
@@ -233,8 +229,12 @@ h5.prodotti {
 
 .card-body {
 	display: flex;
-        flex-direction: column;
-        height: 100%;
+    flex-direction: column;
+    height: 100%;
+    padding-top: 16px !important;
+    padding-bottom: 16px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 
@@ -257,8 +257,9 @@ h5.prodotti {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    background-color: #1E84A8;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #174B85;
     border-radius: 5px;
 }
 
@@ -282,9 +283,14 @@ h5.prodotti {
     justify-content: center;
 }
 
+.imgBio {
+	background-color: #174B85;
+	
+}
+
 /* FOOTER */
 .bgFooterHome {
-    background-color: black;
+    background-color: #174B85;
 }
 
 .text-white {
