@@ -36,4 +36,33 @@ public class AlbumServiceImpl implements AlbumService {
 	public List<Album> getAlbumByTipologia(String string) {
 		return albumDao.findByTipologia(string);
 	}
+//
+//
+//	@Override
+//	public List<Album> getAlbumFromTo(int annoFrom, int annoTo) {
+//		return albumDao.findAnnoFromTo(annoFrom, annoTo);
+//	}
+//	
+//	
+//	@Override
+//	public List<Album> getAlbumDisponibili() {
+//		return albumDao.findDisponibili();
+//	}
+
+
+	@Override
+	public List<Album> getAlbumsByTipologiaAndAnnoFromToAndDisponibile(
+			String tipologia, 
+			int annoFrom, 
+			int annoTo,
+			String disponibile) {
+		
+		return albumDao.findByTipologiaAndAnnoFromToAndDisponibile(
+				tipologia,
+				annoFrom,
+				annoTo,
+				disponibile
+		);
+	}
+
 }

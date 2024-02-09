@@ -77,6 +77,52 @@
     <div>
 		<a th:href="@{/}" class="tornaHomepage"><i class='fas fa-angle-left'></i> Torna in home page</a>
 	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<form id="filtroAlbum" action="catalogo" method="GET">
+    <!-- Filtro per Tipologia -->
+    <label>Tipologia:</label>
+    <ul>
+        <li><input type="radio" th:checked="${tipologiaFiltro == '' || tipologiaFiltro == null}" name="tipologia" value="">Tutti</li>
+        <li><input type="radio" th:checked="${tipologiaFiltro == 'vinile'}" name="tipologia" value="vinile">Vinile</li>
+        <li><input type="radio" th:checked="${tipologiaFiltro == 'cd'}" name="tipologia" value="cd">CD</li>
+    </ul>
+    
+    <!-- Filtro per Anno -->
+    <label>Anno:</label>
+    <ul>
+        <li><input type="radio" th:checked="${annoFiltro == '' || annoFiltro == null}" name="anno" value="">Tutti</li>
+        <li><input type="radio" th:checked="${annoFiltro == '2020'}" name="anno" value="2020">Anni 2020</li>
+        <li><input type="radio" th:checked="${annoFiltro == '2010'}" name="anno" value="2010">Anni 2010</li>
+        <li><input type="radio" th:checked="${annoFiltro == '2000'}" name="anno" value="2000">Anni 2000</li>
+        <li><input type="radio" th:checked="${annoFiltro == '1990'}" name="anno" value="1990">Anni 1990</li>
+        <li><input type="radio" th:checked="${annoFiltro == '1980'}" name="anno" value="1980">Anni 1980</li>
+        <li><input type="radio" th:checked="${annoFiltro == '1970'}" name="anno" value="1970">Anni 1970</li>
+    </ul>
+    
+    <!-- Filtro per Disponibilità -->
+    <label>Disponibilità:</label>
+    <ul>
+        <li><input type="radio" th:checked="${disponibileFiltro == '' || disponibileFiltro == null}" name="disponibile" value="">Tutti</li>
+        <li><input type="radio" th:checked="${disponibileFiltro == 'disponibile'}" name="disponibile" value="disponibile">Solo disponibili</li>
+    </ul>
+    
+    <!-- Bottone per azzerare il filtro -->
+    <button type="submit">Applica</button>
+    <br>
+    <a th:href="@{/catalogo}">Azzera filtro</a>
+</form>
+
+
+
+
+
     <!--CATALOGO-->
     <div class="catalogo-album mx-5">
 	    <div class="titoloCatalogoHome">
@@ -90,13 +136,14 @@
 	          <div class="card-body d-flex flex-column">
 	            <h5 class="card-title cardCatalogo" th:text="${album.titolo}"></h5>
 	            <p class="card-text mb-4 cardCatalogo" th:text="${album.anno}"></p>
+	            <p class="card-text mb-4 cardCatalogo" th:text="${album.tipologia}"></p>
 	            <p class="card-text mb-4 cardCatalogo" th:text="'€ ' + ${album.prezzo}"></p>
 	            <p class="card-text mb-4 cardCatalogo" th:text="'Pezzi disponibili: '  + ${album.quantita}"></p>
 	            <div class="bottoniCat">
 					<a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark btnCatalogo">
 						<i class='fas fa-info-circle'></i>
 					</a>
-					<a th:if="${album.quantita > 0} "th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark btnCatalogo">
+					<a th:if="${album.quantita > 0}" th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark btnCatalogo">
 						<i class='fas fa-shopping-bag'></i>
 					</a>
 				</div>
