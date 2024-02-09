@@ -40,12 +40,12 @@
                 </ul>
                 <ul class="navbar-nav ms-auto">
                   <li class="nav-item">
-                    <a th:if="${loggedIn}" class="icon-link nav-link active" aria-current="page"" th:href="@{/login}">
+                    <a th:if="${loggedIn}" class="icon-link nav-link active" aria-current="page" th:href="@{/login}">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M15 19C15 16.2386 12.7614 14 10 14C7.23858 14 5 16.2386 5 19M10 11C8.34315 11 7 9.65685 7 8C7 6.34315 8.34315 5 10 5C11.6569 5 13 6.34315 13 8C13 9.65685 11.6569 11 10 11ZM19 4.19995V15.8C19 16.9201 19.0002 17.4802 18.7822 17.908C18.5905 18.2844 18.2841 18.5902 17.9078 18.782C17.48 19 16.9203 19 15.8002 19H4.2002C3.08009 19 2.51962 19 2.0918 18.782C1.71547 18.5902 1.40973 18.2844 1.21799 17.908C1 17.4802 1 16.9201 1 15.8V4.19995C1 3.07985 1 2.51986 1.21799 2.09204C1.40973 1.71572 1.71547 1.40973 2.0918 1.21799C2.51962 1 3.08009 1 4.2002 1H15.8002C16.9203 1 17.48 1 17.9078 1.21799C18.2841 1.40973 18.5905 1.71572 18.7822 2.09204C19.0002 2.51986 19 3.07985 19 4.19995Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 						</svg>
                     </a>
-                    <a th:unless="${loggedIn}" class="icon-link nav-link active" aria-current="page"" th:href="@{/personale}">
+                    <a th:unless="${loggedIn}" class="icon-link nav-link active" aria-current="page" th:href="@{/personale}">
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M15 19C15 16.2386 12.7614 14 10 14C7.23858 14 5 16.2386 5 19M10 11C8.34315 11 7 9.65685 7 8C7 6.34315 8.34315 5 10 5C11.6569 5 13 6.34315 13 8C13 9.65685 11.6569 11 10 11ZM19 4.19995V15.8C19 16.9201 19.0002 17.4802 18.7822 17.908C18.5905 18.2844 18.2841 18.5902 17.9078 18.782C17.48 19 16.9203 19 15.8002 19H4.2002C3.08009 19 2.51962 19 2.0918 18.782C1.71547 18.5902 1.40973 18.2844 1.21799 17.908C1 17.4802 1 16.9201 1 15.8V4.19995C1 3.07985 1 2.51986 1.21799 2.09204C1.40973 1.71572 1.71547 1.40973 2.0918 1.21799C2.51962 1 3.08009 1 4.2002 1H15.8002C16.9203 1 17.48 1 17.9078 1.21799C18.2841 1.40973 18.5905 1.71572 18.7822 2.09204C19.0002 2.51986 19 3.07985 19 4.19995Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
@@ -252,6 +252,7 @@
         <script src="js/script.js" async defer></script>
     </body>    
 </html>
+
 
 
 		
