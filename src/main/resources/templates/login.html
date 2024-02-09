@@ -68,94 +68,7 @@
         <div class="text-bg-dark divImgLogin">
             <img src="img/login.jpg" class="imgLogin img-fluid" alt="Baglioni Accesso">
         </div>
-        <!--FORM REGISTRAZIONE: QUESTO FORM COMPARE SE NON ESISTE IL CLIENTE-->
-        <div class="titoloPagLogin"> 
-          <h4>Crea un nuovo account</h4>
-        </div>
-        <div class="formLogin">
-          <form class="row gy-4" method="post" action="login/registrazione" th:object="${cliente}">
-            <div class="col-md-4">
-              <label for="username" class="form-label">Username</label>
-              <input type="text" th:field="*{username}" class="form-control" id="username" required>
-              <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
-            </div>
-            
-            <div class="col-md-4">
-              <label for="password" class="form-label">Password</label>
-              <input type="password"  th:field="*{password}" class="form-control" id="ipassword" required>
-              
-            </div>
-            
-            <div class="col-md-4">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" th:field="*{email}" class="form-control" id="email" required>
-              <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
-            </div>
-            
-            <div class="col-md-6">
-              <label for="nome" class="form-label">Nome</label>
-              <input type="text" th:field="*{nome}" class="form-control" id="nome" required>
-              <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
-            </div>
-            
-            <div class="col-md-6">
-              <label for="cognome" class="form-label">Cognome</label>
-              <input type="text" th:field="*{cognome}" class="form-control" id="cognome" required>
-              <p th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></p>
-            </div>
-            
-            <div class="col-md-4">
-              <label for="data_di_nascita" class="form-label">Data di nascita</label>
-              <input type="date" th:field="*{data_di_nascita}" class="form-control" id="data_di_nascita">
-              
-            </div>
-            
-            <div class="col-md-4">
-              <label for="numero_di_telefono" class="form-label">Numero di telefono</label>
-              <input type="text" th:field="*{numero_di_telefono}" class="form-control" id="numero_di_telefono">
-            </div>
-            
-            <div class="col-md-4">
-              <label for="nazione" class="form-label">Nazione</label>
-              <input type="text" th:field="*{nazione}" class="form-control" id="nazione" required>
-            </div>
-            
-            <div class="col-8">
-              <label for="indirizzo" class="form-label">Indirizzo</label>
-              <input type="text" th:field="*{indirizzo}" class="form-control" id="indirizzo" required>
-              <p th:if="${#fields.hasErrors('indirizzo')}" th:errors="*{indirizzo}"></p>
-            </div>
-            
-            <div class="col-4">
-              <label for="civico" class="form-label">Civico</label>
-              <input type="text" th:field="*{civico}" class="form-control" id="civico" required>
-              <p th:if="${#fields.hasErrors('civico')}" th:errors="*{civico}"></p>
-            </div>
-            
-            <div class="col-md-6">
-              <label for="citta" class="form-label">Città</label>
-              <input type="text" th:field="*{citta}" class="form-control" id="citta" required>
-              <p th:if="${#fields.hasErrors('citta')}" th:errors="*{citta}"></p>
-            </div>
-            
-            <div class="col-md-3">
-              <label for="provincia" class="form-label">Provincia</label>
-              <input type="text" th:field="*{provincia}" class="form-control" id="provincia" required>
-              <p th:if="${#fields.hasErrors('provincia')}" th:errors="*{provincia}"></p>
-            </div>
-            
-            <div class="col-md-3">
-              <label for="cap" class="form-label">Cap</label>
-              <input type="text" th:field="*{cap}" class="form-control" id="cap" required>
-              <p th:if="${#fields.hasErrors('cap')}" th:errors="*{cap}"></p>
-            </div>
-            
-            <div class="col-12 btnLogin">
-              <button type="submit" value="Registrati" class=" btn btn-outline-dark">Registrati</button>
-            </div>
-          </form>
-        </div>
-
+       
 
        <!--FORM ACCESSO: QUESTO FORM COMPARE SE ESISTE IL CLIENTE-->
         <div class="titoloPagLogin"> 
@@ -173,6 +86,8 @@
             </div>
             <div class="col-12 btnLogin">
               <button type="submit" value="Accedi" class=" btn btn-outline-dark">Accedi</button>
+              
+			<a th:href="@{/registrazione}" class="nav-link active" aria-current="page">Registrazione</a>
             </div>
           </form>
         </div>
@@ -226,10 +141,6 @@
           </footer>
           <!-- Footer -->
         
-
-
-
-
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/458a2c3652.js" crossorigin="anonymous"></script>
         <script src="js/script.js" async defer></script>
