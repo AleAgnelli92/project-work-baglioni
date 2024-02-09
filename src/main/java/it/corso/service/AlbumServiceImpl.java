@@ -30,4 +30,10 @@ public class AlbumServiceImpl implements AlbumService {
     public void salvaAlbum(Album album) {
         albumDao.save(album);
     }
+
+
+	@Override
+	public List<Album> getAlbumByTipologia(String string) {
+		return albumDao.findByTipologia(string);
+	}
 }

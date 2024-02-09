@@ -22,13 +22,24 @@ public class HomePageController {
     public String home(Model model) {
 		//recuperiamo l elenco di tutti gli album dal service
 		List<Album>tuttiAlbum=albumService.getAlbums();
+		List<Album>albumVinile=albumService.getAlbumByTipologia("Vinile");
+		List<Album>albumCD=albumService.getAlbumByTipologia("CD");
 		
 		//serve ad estrarre casualmente i tre dischi per home page 
 		List<Album>albumHomePage=getRandomAlbum(tuttiAlbum,numeriProdottiHomePage);
-        
 		model.addAttribute("albumInHomePage",albumHomePage);
+		
+		
+		List<Album>vinileInHomePage=getRandomAlbum(albumVinile,numeriProdottiHomePage);
+		model.addAttribute("vinileHomePage", vinileInHomePage);
+		
+		List<Album>cdInHomePage=getRandomAlbum(albumCD,numeriProdottiHomePage);
+		model.addAttribute("CDHomePage", cdInHomePage);
+		
 		return "homepage";
+       
     }
+	
 	private List<Album> getRandomAlbum(List<Album> tuttiAlbum, int numAlbum) {
 		// metodo per estrarre
 		Random random = new Random();

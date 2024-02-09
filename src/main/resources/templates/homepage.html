@@ -121,6 +121,83 @@
 			    </div>
             </div>
         </div>
+        
+         <!--CATALOGO DEI VINILI AGGIUNTO DA NELA-->
+        <div class="catalogoHome mx-5">
+            <div class="titoloPagina">
+                <h4 class="text-uppercase mb-3"><strong>Scopri il catalogo DEI VINILI</strong></h4>
+            </div>
+            <div class="row row-cols-1 gy-4 gx-4">
+			    <div class="col col-md-4 col-sm" th:each="album:${vinileHomePage}">
+			        <div class="card flex-fill h-100 cardHover">
+			        	<a th:href="@{/dettaglio(id=${album.id})}"><img th:if="${album.copertina == null}"  th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="card-img-top" alt="Album Cover"></a>
+			            <div class="card-body">
+			            	<p th:text="${album.tipologia}" class="card-text tipologia"></p>
+			            	<h5 th:text="${album.titolo} + ' - ' + ${album.anno}" class="card-title prodotti"></h5>
+			            </div>
+			            <div class="card-body justify-content-end pt-0">
+			                	<p th:text="'€ ' + ${album.prezzo}" class="card-text prezzo"></p>
+				                <div class="bottoniHome ">
+				                    <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn">
+				                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.09998V6H10.0498Z" stroke="#0A2A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+				                    </a>
+				                    <a th:if="${album.quantita > 0}" th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn">
+				                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M15 15C13.8954 15 13 15.8954 13 17C13 18.1046 13.8954 19 15 19C16.1046 19 17 18.1046 17 17C17 15.8954 16.1046 15 15 15ZM15 15H7.29395C6.83269 15 6.60197 15 6.41211 14.918C6.24466 14.8456 6.09934 14.7288 5.99349 14.5802C5.87348 14.4118 5.82609 14.1863 5.72945 13.7353L3.27148 2.26477C3.17484 1.81376 3.12587 1.58825 3.00586 1.4198C2.90002 1.27123 2.75525 1.15441 2.5878 1.08205C2.39794 1 2.16779 1 1.70653 1H1M4 4H16.8732C17.595 4 17.9557 4 18.1979 4.15036C18.4101 4.28206 18.5652 4.48838 18.6329 4.72876C18.7102 5.00319 18.611 5.34996 18.411 6.04346L17.0264 10.8435C16.9068 11.2581 16.8469 11.4655 16.7256 11.6193C16.6185 11.7551 16.4772 11.8608 16.3171 11.926C16.1356 12 15.9199 12 15.4883 12H5.73047M6 19C4.89543 19 4 18.1046 4 17C4 15.8954 4.89543 15 6 15C7.10457 15 8 15.8954 8 17C8 18.1046 7.10457 19 6 19Z" stroke="#0A2A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+				                    </a>
+				                </div>
+			                
+			            </div>
+			        </div>
+			    </div>
+			</div>
+			
+			
+            <div class="btnHome">
+                <a href="catalogo" role="button" class="btn text-light text-uppercase">Vai al catalogo</a>
+            </div>
+        </div>
+        
+         <!--CATALOGO DEI CV INSERITO DA NELA-->
+        <div class="catalogoHome mx-5">
+            <div class="titoloPagina">
+                <h4 class="text-uppercase mb-3"><strong>Scopri il catalogo DEI CD</strong></h4>
+            </div>
+            <div class="row row-cols-1 gy-4 gx-4">
+			    <div class="col col-md-4 col-sm" th:each="album:${CDHomePage}">
+			        <div class="card flex-fill h-100 cardHover">
+			        	<a th:href="@{/dettaglio(id=${album.id})}"><img th:if="${album.copertina == null}"  th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="card-img-top" alt="Album Cover"></a>
+			            <div class="card-body">
+			            	<p th:text="${album.tipologia}" class="card-text tipologia"></p>
+			            	<h5 th:text="${album.titolo} + ' - ' + ${album.anno}" class="card-title prodotti"></h5>
+			            </div>
+			            <div class="card-body justify-content-end pt-0">
+			                	<p th:text="'€ ' + ${album.prezzo}" class="card-text prezzo"></p>
+				                <div class="bottoniHome ">
+				                    <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn">
+				                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.09998V6H10.0498Z" stroke="#0A2A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+				                    </a>
+				                    <a th:if="${album.quantita > 0}" th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn">
+				                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M15 15C13.8954 15 13 15.8954 13 17C13 18.1046 13.8954 19 15 19C16.1046 19 17 18.1046 17 17C17 15.8954 16.1046 15 15 15ZM15 15H7.29395C6.83269 15 6.60197 15 6.41211 14.918C6.24466 14.8456 6.09934 14.7288 5.99349 14.5802C5.87348 14.4118 5.82609 14.1863 5.72945 13.7353L3.27148 2.26477C3.17484 1.81376 3.12587 1.58825 3.00586 1.4198C2.90002 1.27123 2.75525 1.15441 2.5878 1.08205C2.39794 1 2.16779 1 1.70653 1H1M4 4H16.8732C17.595 4 17.9557 4 18.1979 4.15036C18.4101 4.28206 18.5652 4.48838 18.6329 4.72876C18.7102 5.00319 18.611 5.34996 18.411 6.04346L17.0264 10.8435C16.9068 11.2581 16.8469 11.4655 16.7256 11.6193C16.6185 11.7551 16.4772 11.8608 16.3171 11.926C16.1356 12 15.9199 12 15.4883 12H5.73047M6 19C4.89543 19 4 18.1046 4 17C4 15.8954 4.89543 15 6 15C7.10457 15 8 15.8954 8 17C8 18.1046 7.10457 19 6 19Z" stroke="#0A2A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+				                    </a>
+				                </div>
+			                
+			            </div>
+			        </div>
+			    </div>
+			</div>
+            <div class="btnHome">
+                <a href="catalogo" role="button" class="btn text-light text-uppercase">Vai al catalogo</a>
+            </div>
+        </div>
+        
         <!--GALLERY-->
         <div class="galleryHome mx-5 my-5">
             <div class="row">
