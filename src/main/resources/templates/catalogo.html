@@ -24,6 +24,11 @@
      <!--NAVBAR-->
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark px-5" id="navBack">
             <div class="container-fluid elementiNav  ">
+            	<a th:href="@{/}" class="navbar-brand ">
+            		<svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M19 1V11L10 6L19 1ZM10 1V11L1 6L10 1Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+            	</a>
             	<a class="navbar-brand " th:href="@{/}">
 			      <img src="img/ClaudioBaglioni-firma.png" alt="Bootstrap" width="200" height="auto">
 			    </a>
@@ -33,13 +38,13 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto text-uppercase">
                   <li class="nav-item">
-                    <a th:href="@{/}" class="nav-link active" aria-current="page">Home</a>
+                    <a th:href="@{/}" class="nav-link nonAttivo" >Home</a>
                   </li>
                   <li class="nav-item">
                     <a th:href="@{/bio}" class="nav-link nonAttivo">Bio</a>
                   </li>
                   <li class="nav-item">
-                    <a th:href="@{/catalogo}" class="nav-link nonAttivo">Catalogo</a>
+                    <a th:href="@{/catalogo}" class="nav-link active" aria-current="page">Catalogo</a>
                   </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -70,86 +75,88 @@
 
     <!--IMG-->
     <div class="text-bg-dark divImgCatalogo">
-        <img src="img/baglioniCatalogo.jpg" class="imgCatalogo img-fluid" alt="Baglioni Catalogo">
+        <img src="img/Catalogo.png" class="imgCatalogo img-fluid" alt="Baglioni Catalogo">
+        <div class="card-img-overlay testoCentrato col-5">
+                <p class="card-text text-uppercase anniCarriera"><strong>60 anni di carriera</strong></p>
+                <a class="navbar-brand">
+			      <img src="img/ClaudioBaglioni-firma.png" alt="Bootstrap" width="450" height="auto" class="autografo">
+			      
+			    </a>
+            </div>
     </div>
-    <br>
     
-    <div>
-		<a th:href="@{/}" class="tornaHomepage"><i class='fas fa-angle-left'></i> Torna in home page</a>
-	</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	<form id="filtroAlbum" action="catalogo" method="GET">
-    <!-- Filtro per Tipologia -->
-    <label>Tipologia:</label>
-    <ul>
-        <li><input type="radio" th:checked="${tipologiaFiltro == '' || tipologiaFiltro == null}" name="tipologia" value="">Tutti</li>
-        <li><input type="radio" th:checked="${tipologiaFiltro == 'vinile'}" name="tipologia" value="vinile">Vinile</li>
-        <li><input type="radio" th:checked="${tipologiaFiltro == 'cd'}" name="tipologia" value="cd">CD</li>
-    </ul>
-    
-    <!-- Filtro per Anno -->
-    <label>Anno:</label>
-    <ul>
-        <li><input type="radio" th:checked="${annoFiltro == '' || annoFiltro == null}" name="anno" value="">Tutti</li>
-        <li><input type="radio" th:checked="${annoFiltro == '2020'}" name="anno" value="2020">Anni 2020</li>
-        <li><input type="radio" th:checked="${annoFiltro == '2010'}" name="anno" value="2010">Anni 2010</li>
-        <li><input type="radio" th:checked="${annoFiltro == '2000'}" name="anno" value="2000">Anni 2000</li>
-        <li><input type="radio" th:checked="${annoFiltro == '1990'}" name="anno" value="1990">Anni 1990</li>
-        <li><input type="radio" th:checked="${annoFiltro == '1980'}" name="anno" value="1980">Anni 1980</li>
-        <li><input type="radio" th:checked="${annoFiltro == '1970'}" name="anno" value="1970">Anni 1970</li>
-    </ul>
-    
-    <!-- Filtro per Disponibilità -->
-    <label>Disponibilità:</label>
-    <ul>
-        <li><input type="radio" th:checked="${disponibileFiltro == '' || disponibileFiltro == null}" name="disponibile" value="">Tutti</li>
-        <li><input type="radio" th:checked="${disponibileFiltro == 'disponibile'}" name="disponibile" value="disponibile">Solo disponibili</li>
-    </ul>
-    
-    <!-- Bottone per azzerare il filtro -->
-    <button type="submit">Applica</button>
-    <br>
-    <a th:href="@{/catalogo}">Azzera filtro</a>
-</form>
-
-
-
-
 
     <!--CATALOGO-->
     <div class="catalogo-album mx-5">
 	    <div class="titoloCatalogoHome">
 	      <h4>Catalogo</h4>
 	    </div>
+	    	<div class="row">
+	      		<div class="col-3">
+	        		<form id="filtroAlbum" action="catalogo" method="GET">
+				    <!-- Filtro per Tipologia -->
+				    <label>Tipologia:</label>
+				    <ul>
+				        <li><input type="radio" th:checked="${tipologiaFiltro == '' || tipologiaFiltro == null}" name="tipologia" value=""> Tutti</li>
+				        <li><input type="radio" th:checked="${tipologiaFiltro == 'vinile'}" name="tipologia" value="vinile"> Vinile</li>
+				        <li><input type="radio" th:checked="${tipologiaFiltro == 'cd'}" name="tipologia" value="cd"> CD</li>
+				    </ul>
+				    
+				    <!-- Filtro per Anno -->
+				    <label>Anno:</label>
+				    <ul>
+				        <li><input type="radio" th:checked="${annoFiltro == '' || annoFiltro == null}" name="anno" value=""> Tutti</li>
+				        <li><input type="radio" th:checked="${annoFiltro == '2020'}" name="anno" value="2020"> Anni 2020</li>
+				        <li><input type="radio" th:checked="${annoFiltro == '2010'}" name="anno" value="2010"> Anni 2010</li>
+				        <li><input type="radio" th:checked="${annoFiltro == '2000'}" name="anno" value="2000"> Anni 2000</li>
+				        <li><input type="radio" th:checked="${annoFiltro == '1990'}" name="anno" value="1990"> Anni 1990</li>
+				        <li><input type="radio" th:checked="${annoFiltro == '1980'}" name="anno" value="1980"> Anni 1980</li>
+				        <li><input type="radio" th:checked="${annoFiltro == '1970'}" name="anno" value="1970"> Anni 1970</li>
+				    </ul>
+				    
+				    <!-- Filtro per Disponibilità -->
+				    <label>Disponibilità:</label>
+				    <ul>
+				        <li><input type="radio" th:checked="${disponibileFiltro == '' || disponibileFiltro == null}" name="disponibile" value=""> Tutti</li>
+				        <li><input type="radio" th:checked="${disponibileFiltro == 'disponibile'}" name="disponibile" value="disponibile"> Solo disponibili</li>
+				    </ul>
+				    
+				    <!-- Bottone per azzerare il filtro -->
+				    <button class="btnFiltri" type="submit">Applica</button>
+				    <br>
+				    <a th:href="@{/catalogo}">Azzera filtro</a>
+				</form>
+	    		</div>
 	    
-	    <div class="row">
-	      <div class="col-lg-3 col-md-6 d-flex align-items-stretch gx-4 gy-4" th:each="album : ${albums}">
-	        <div class="card cardHover flex-fill">
-	          <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="cardalbum-img-top" alt="Card Image">
-	          <div class="card-body d-flex flex-column">
-	            <h5 class="card-title cardCatalogo" th:text="${album.titolo}"></h5>
-	            <p class="card-text mb-4 cardCatalogo" th:text="${album.anno}"></p>
-	            <p class="card-text mb-4 cardCatalogo" th:text="${album.tipologia}"></p>
-	            <p class="card-text mb-4 cardCatalogo" th:text="'€ ' + ${album.prezzo}"></p>
-	            <p class="card-text mb-4 cardCatalogo" th:text="'Pezzi disponibili: '  + ${album.quantita}"></p>
-	            <div class="bottoniCat">
-					<a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn btn-outline-dark btnCatalogo">
-						<i class='fas fa-info-circle'></i>
-					</a>
-					<a th:if="${album.quantita > 0}" th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn btn-outline-dark btnCatalogo">
-						<i class='fas fa-shopping-bag'></i>
-					</a>
-				</div>
-	          </div>
-	        </div>
-	    </div>
+	    	<div class="col-9">
+	    		<div class="row">
+	    			<div class="col-4 d-flex align-items-stretch" th:each="album : ${albums}">
+				        <div class="card cardHover flex-fill">
+				          <img th:if="${album.copertina == null}" th:src="@{'img/album_' + ${album.id} + '.jpg'}" class="cardalbum-img-top" alt="Card Image">
+				          <div class="card-body d-flex flex-column">
+				            <h5 class="card-title prodotti" th:text="${album.titolo} + ' - ' + ${album.anno}"></h5>
+							<div class="card-body justify-content-end pt-0">
+			                	<p th:text="'€ ' + ${album.prezzo}" class="card-text prezzo"></p>
+				                <div class="bottoniHome ">
+				                    <a th:href="@{/dettaglio(id=${album.id})}" role="button" class="btn">
+				                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M10 9V14M10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10C19 14.9706 14.9706 19 10 19ZM10.0498 6V6.1L9.9502 6.09998V6H10.0498Z" stroke="#0A2A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+				                    </a>
+				                    <a th:if="${album.quantita > 0}" th:href="@{/carrello/aggiungi(id=${album.id})}" role="button" class="btn">
+				                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M15 15C13.8954 15 13 15.8954 13 17C13 18.1046 13.8954 19 15 19C16.1046 19 17 18.1046 17 17C17 15.8954 16.1046 15 15 15ZM15 15H7.29395C6.83269 15 6.60197 15 6.41211 14.918C6.24466 14.8456 6.09934 14.7288 5.99349 14.5802C5.87348 14.4118 5.82609 14.1863 5.72945 13.7353L3.27148 2.26477C3.17484 1.81376 3.12587 1.58825 3.00586 1.4198C2.90002 1.27123 2.75525 1.15441 2.5878 1.08205C2.39794 1 2.16779 1 1.70653 1H1M4 4H16.8732C17.595 4 17.9557 4 18.1979 4.15036C18.4101 4.28206 18.5652 4.48838 18.6329 4.72876C18.7102 5.00319 18.611 5.34996 18.411 6.04346L17.0264 10.8435C16.9068 11.2581 16.8469 11.4655 16.7256 11.6193C16.6185 11.7551 16.4772 11.8608 16.3171 11.926C16.1356 12 15.9199 12 15.4883 12H5.73047M6 19C4.89543 19 4 18.1046 4 17C4 15.8954 4.89543 15 6 15C7.10457 15 8 15.8954 8 17C8 18.1046 7.10457 19 6 19Z" stroke="#0A2A36" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+										</svg>
+				                    </a>
+				                </div>
+			            	</div>
+				          </div>
+				        </div>
+				    </div>
+	    		</div>
+	    	</div>
+	      
+	      
 	   </div>
       
 	</div>	
