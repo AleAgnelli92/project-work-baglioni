@@ -27,9 +27,10 @@ public class ClienteServiceImpl implements ClienteService {
     }
     
     @Override
-    public void registrazioneCliente(Cliente cliente) {
+    public Cliente registrazioneCliente(Cliente cliente) {
 
-        clienteDao.save(cliente);
+        Cliente clienteSalvato = clienteDao.save(cliente);
+        return clienteSalvato;
     }
 
 	@Override

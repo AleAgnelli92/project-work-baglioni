@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import it.corso.model.Cliente;
 import it.corso.service.ClienteService;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 @RequestMapping("/registrazione")
@@ -30,12 +31,13 @@ public class RegistrazioneController
 
 	
 	@PostMapping("/registrazionecliente")
-	public String formManager(@Valid @ModelAttribute("cliente") Cliente cliente, BindingResult result) {
+	public String formManager(@Valid @ModelAttribute("cliente") Cliente cliente, BindingResult result, HttpSession session) {
 		
 		if(result.hasErrors())
 			return "/registrazione";
 		
-		clienteService.registrazioneCliente(cliente);
+		Cliente clienteSalvato = clienteService.registrazioneCliente(cliente);
+		session.setAttribute("cliente", clienteSalvato);
 		return "redirect:/personale";
 	}
 }
