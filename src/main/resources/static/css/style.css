@@ -128,7 +128,6 @@
 	height: 100%;
 	width: 100%;
 	object-fit: cover;
-	opacity: 0.5;
 	
 }
 
@@ -283,10 +282,7 @@ h5.prodotti {
     justify-content: center;
 }
 
-.imgBio {
-	background-color: #174B85;
-	
-}
+
 
 /* FOOTER */
 .bgFooterHome {
@@ -517,7 +513,7 @@ h5.prodotti {
 
 .testoCentrato {
     position: absolute !important;
-    top: 50% !important;
+    top: 40% !important;
     left: 35% !important;
     padding: 0 !important;
   }
@@ -581,29 +577,19 @@ p.cardCatalogo {
 
 .divImgCatalogo {
     border: none !important;
-    background-color:#174B85 !important;
     width: 100%;
-   
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-@media (max-width: 560px) {
-    .divImgCatalogo {
-        height: 200px !important;
-    }
-}
-@media (max-width: 350px) {
-    .divImgCatalogo {
-        height: 100px !important;
-    }
-}
+
+
+
 .imgCatalogo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.4;
 }
 
 .txtCard {
@@ -651,6 +637,14 @@ p.cardCatalogo {
     height: auto;
 }
 
+.immagineBio {
+	width: 80%;
+	height: auto;
+	
+}
+
+
+
 .divImgBio {
     border: none !important;
     background-color: white !important;
@@ -661,22 +655,14 @@ p.cardCatalogo {
     justify-content: center;
     align-items: start;
 }
-@media (max-width: 560px) {
-    .divImgBio {
-        height: 200px !important;
-    }
-}
-@media (max-width: 350px) {
-    .divImgBio {
-        height: 100px !important;
-    }
-}
+
 .imgBio {
-    display: flex;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    
 }
+
 
 /* PERSONALE */
 .btnPersonale {
