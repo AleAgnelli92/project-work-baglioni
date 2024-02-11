@@ -348,8 +348,8 @@ h5.prodotti {
 }
 
 .formRegistrati {
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-left: 300px !important;
+    margin-right: 300px !important;
     margin-top: 30px;
     margin-bottom: 40px;
    
