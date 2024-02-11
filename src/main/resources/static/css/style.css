@@ -330,12 +330,6 @@ h5.prodotti {
 	 font-size: 40px !important;
 }
 
-.formLogin {
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 10px;
-    
-}
 
 .btnLogin {
     display: flex;
@@ -343,6 +337,66 @@ h5.prodotti {
     align-items: center;
     margin-top: 20px;
 }
+
+.formLogin {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 400px;
+    margin-bottom: 40px;
+    
+}
+
+.formRegistrati {
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+   
+}
+
+
+
+.btnRegistrati {
+    margin-top: 40px;  
+    margin-top: 20px;
+    margin-top: 10px;
+    background-color: rgb(23, 75, 133) !important;
+}
+
+.btnRegistrati:hover {
+    background-color: rgb(6, 46, 88) !important;
+    
+}
+
+
+
+
+.btn-block {
+    width: 100%;
+}
+
+.registrati {
+    
+    text-decoration: none;
+    margin-top: 40px;
+    font-size: small;
+    
+}
+
+.accedi {
+    font-size: small;
+    text-decoration: none;
+    margin-top: 15px;
+
+}
+
+.form-group.has-error input {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+
 
 /* CARRELLO */
 .divImgCarrello {
