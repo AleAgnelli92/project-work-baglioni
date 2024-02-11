@@ -766,27 +766,48 @@ p.cardCatalogo {
     align-items:flex-start;
 }
 
-@media (max-width: 768px) {
-    h2 {
-    	margin-top: 20px !important;
-    }
-}
+ .testoDettaglioHero {
+  	font-style: italic;
+  	font-weight: bold;
+  }
 
-@media (max-width: 560px) {
-    .divImgDettaglio {
-        height: 200px !important;
-    }
-}
-@media (max-width: 350px) {
-    .divImgDettaglio {
-        height: 100px !important;
-    }
-}
+
 .imgDettaglio {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
+
+
+.testoImgDettaglioHero {
+	text-align: justify;
+	margin-left: 7px;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.pHero {
+	font-size: 25px;
+}
+
+.descrizioneDettaglioHero {
+	text-align: justify;
+	margin-left: 7px;
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+.txtHeroOver {
+    position: absolute !important;
+    top: 20% !important;
+    left: 7% !important;
+    padding: 0 !important;
+  }
+  
+.txtHeroOver p {
+	margin-bottom: 0 !important;
+}
+
 /*TITOLO DETTAGLIO*/
 .titoloDettaglioHome {
     display: flex;
@@ -808,11 +829,38 @@ p.cardCatalogo {
     color: red;
 }
 
-.imgDettaglioAlbum {
-   width: 100%;
-   height: auto;
-   object-fit: cover; 
-   aspect-ratio: 1 / 1;
+.imgHeroDettaglio {
+    border: none !important;
+    width: 100% !important;
+    overflow: hidden;
+    background-color: #174B85 !important;
+    height: 507px !important;
+    justify-content: center;
+    align-items: center;
+}
 
+.imgDettaglioAlbum {
+   width: 100% !important;
+   height: auto !important;
+   object-fit: cover; 
+   opacity: 0.4 !important;
+
+}
+
+.btnImgDettaglio {
+	margin-left: 7px;
+	width: 300px;
+	height: 40px;
+	padding: 5px !important;
+	font-size: 18px !important;
+	margin-top: 20px !important;
+	justify-content: center;
+	align-items: center;
+	
+	
+}
+
+.tabellaDettaglio {
+	color: #174B85 !important;
 }
 
