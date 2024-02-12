@@ -76,7 +76,7 @@
       </div>
     </div>
 
- <!--FORM REGISTRAZIONE: QUESTO FORM COMPARE SE NON ESISTE IL CLIENTE
+ <!--FORM REGISTRAZIONE: QUESTO FORM COMPARE SE NON ESISTE IL CLIENTE-->
 
 	
 	
@@ -93,7 +93,7 @@
             
             <div class="col-md-6">
               <!--<label for="password" class="form-label">Password</label>-->
-              <input type="password"  th:field="*{password}" class="form-control" id="ipassword" placeholder="Password">
+              <input type="password"  th:field="*{password}" class="form-control" id="ipassword" placeholder="Password" required>
               <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="text-danger"></span>
             </div>
 
