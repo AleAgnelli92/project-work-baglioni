@@ -43,7 +43,6 @@ public class Cliente {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate data_di_nascita;
 	@Column
-	@Pattern(regexp = "\\d{10}", message = "Il numero di telefono deve contenere esattamente 10 numeri")
     private String numero_di_telefono;
 	@Column
 	@Pattern(regexp = "[a-zA-Z\\s']{1,50}", message = "Caratteri non ammessi nel campo nazione")
