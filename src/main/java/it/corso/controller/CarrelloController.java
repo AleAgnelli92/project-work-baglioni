@@ -27,6 +27,9 @@ public class CarrelloController {
 			Model model,
 			HttpSession session)
 	{
+		boolean loggedIn = session.getAttribute("cliente") != null;
+        model.addAttribute("loggato", loggedIn);
+		System.out.println(model.getAttribute("loggato"));
 		List<Album> carrello = (List<Album>) session.getAttribute("carrello");
 		model.addAttribute("albumNelCarrello", carrello);
 		

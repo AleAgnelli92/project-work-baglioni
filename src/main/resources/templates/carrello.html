@@ -119,10 +119,11 @@
 			        <img src="img/paypal-icon.svg" class="payPal">
 			        <div class="btnHome">
 			        	<!-- th:href="@{/ordine/registraordine}" -->
-				        <a id="pagaOraLoggedIn"  class="btn text-light text-uppercase " type="button"
-				          style="display: none;" onclick="mostraAlertLog()">PAGA ORA CON PAYPAL</a>
+				        <a th:if="${loggato}" id="pagaOraLoggedIn"  class="btn text-light text-uppercase " type="button"
+				         onclick="mostraAlertLog()">PAGA ORA CON PAYPAL</a>
 				          <!-- th:href="@{login}" -->
-				        <a id="pagaOraNotLoggedIn"  class="btn text-light text-uppercase " type="button" onclick="mostraAlertNotLog()">PAGA ORA CON
+				        <a th:unless="${loggato}" id="pagaOraNotLoggedIn"  class="btn text-light text-uppercase " type="button" 
+				        onclick="mostraAlertNotLog()">PAGA ORA CON
 				          PAYPAL</a>
 				          <!-- POP UP -->
 				          <div id="customAlertLogged" class="custom-alert">
@@ -134,16 +135,7 @@
 		                      <span class="close" onclick="chiudiAlertNotLog()">&times;</span>
 		                      <p>Per acquistare devi aver effettuato il login o esserti registrato!</p>
 		                  </div>
-			        </div>  
-			
-			        <script>
-			        
-			          if (loggedIn) { //non si verifica mai true e quindi fa sempre vedere il tasto del not log
-			            document.getElementById("pagaOraLoggedIn").style.display = "inline-block";
-			          } else {
-			            document.getElementById("pagaOraNotLoggedIn").style.display = "inline-block";
-			          }
-			        </script>
+			        </div>
 			
 			      </div>
             </div>
