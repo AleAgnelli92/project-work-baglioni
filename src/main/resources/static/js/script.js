@@ -31,7 +31,11 @@ function mostraAlertLog() {
 	
 						}
 						
-
+function mostraAlertReg() {
+	var customAlert = document.getElementById('customAlertReg');
+	customAlert.style.display = 'block';
+	
+						}
 						
 function mostraAlertNotLog() {
 	var log = document.getElementById('customAlertNotLogged');
@@ -43,6 +47,13 @@ function chiudiAlertLog() {
     customAlert.style.display = 'none';
 
     window.location.href = "/ordine/registraordine";
+}
+
+function chiudiAlertReg() {
+    var customAlert = document.getElementById('customAlertReg');
+    customAlert.style.display = 'none';
+
+    window.location.href = "personale";
 }
 
 function chiudiAlertNotLog() {

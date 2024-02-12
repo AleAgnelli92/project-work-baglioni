@@ -167,9 +167,14 @@
             
             
             <div class="col-4 offset-md-4 btnLogin">
-              <button type="submit" value="Registrati" class=" btn btn-dark btnRegistrati btn-block">CREA ACCOUNT</button>
+              <button type="submit" value="Registrati" class=" btn btn-dark btnRegistrati btn-block" onclick="mostraAlertReg()">CREA ACCOUNT</button>
+              <div id="customAlertReg" class="custom-alert">
+		       	<span class="close" onclick="chiudiAlertReg()">&times;</span>
+		      	<p>Registrazione avvenuta con successo!</p>
+		      </div>
             </div>
           </form>
+          
           
           <div class="row">
             <div class="col-12 text-center accedi" style="margin-top: 15px;">

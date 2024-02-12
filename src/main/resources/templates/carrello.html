@@ -124,7 +124,7 @@
 				          <!-- th:href="@{login}" -->
 				        <a id="pagaOraNotLoggedIn"  class="btn text-light text-uppercase " type="button" onclick="mostraAlertNotLog()">PAGA ORA CON
 				          PAYPAL</a>
-				          <!-- MANCANO I POP UP -->
+				          <!-- POP UP -->
 				          <div id="customAlertLogged" class="custom-alert">
 		                      <span class="close" onclick="chiudiAlertLog()">&times;</span>
 		                      <p>Pagamento effettuato con successo!</p>
@@ -137,6 +137,7 @@
 			        </div>  
 			
 			        <script>
+			        
 			          if (loggedIn) { //non si verifica mai true e quindi fa sempre vedere il tasto del not log
 			            document.getElementById("pagaOraLoggedIn").style.display = "inline-block";
 			          } else {
