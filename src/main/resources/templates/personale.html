@@ -150,9 +150,13 @@
                       
                       
                       
-                      <!--QUESTO BUTTON DEVE COMPARIRE SOLO QUANDO STO MODIFICANDO, PER INVIARE I DATI AGGIORNATI-->
                       <div class="col-12 btnLogin">
-                        <input type="submit" value = "Modifica" class=" btn btn-outline-dark">
+                        <input type="submit" value = "Modifica" class=" btn btn-outline-dark" onclick="mostraSuccessPopup()">
+                        <!-- POP UP -->
+                        <div id="successPopup" class="popupModifica">
+			                <span class="close" onclick="chiudiSuccessPopup()">&times;</span>
+			                <p>Modifica avvenuta con successo!</p>
+			            </div>
                       </div>                     
                     </form>
                   </div>
