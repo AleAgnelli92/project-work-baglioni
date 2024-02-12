@@ -91,9 +91,14 @@ function closeConfirm() {
          confirmDiv.style.display = "none";
 }
  
-window.addEventListener("click", function(){
-  document.getElementById("demo").innerHTML = "Hello World!";
-});
+function mostraSuccessPopup() {
+                    var successPopup = document.getElementById('successPopup');
+                    successPopup.style.display = 'block';
+                }
+                function chiudiSuccessPopup() {
+                    var successPopup = document.getElementById('successPopup');
+                    successPopup.style.display = 'none';
+                }
 
 
 
