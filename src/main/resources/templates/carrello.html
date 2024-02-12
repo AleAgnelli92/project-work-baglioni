@@ -118,15 +118,26 @@
 			        
 			        <img src="img/paypal-icon.svg" class="payPal">
 			        <div class="btnHome">
-				        <a id="pagaOraLoggedIn" th:href="@{/ordine/registraordine}" class="btn text-light text-uppercase " type="button"
-				          style="display: none;">PAGA ORA CON PAYPAL</a>
-				        <a id="pagaOraNotLoggedIn" th:href="@{login}" class="btn text-light text-uppercase " type="button">PAGA ORA CON
+			        	<!-- th:href="@{/ordine/registraordine}" -->
+				        <a id="pagaOraLoggedIn"  class="btn text-light text-uppercase " type="button"
+				          style="display: none;" onclick="mostraAlertLog()">PAGA ORA CON PAYPAL</a>
+				          <!-- th:href="@{login}" -->
+				        <a id="pagaOraNotLoggedIn"  class="btn text-light text-uppercase " type="button" onclick="mostraAlertNotLog()">PAGA ORA CON
 				          PAYPAL</a>
 				          <!-- MANCANO I POP UP -->
+				          <div id="customAlertLogged" class="custom-alert">
+		                      <span class="close" onclick="chiudiAlertLog()">&times;</span>
+		                      <p>Pagamento effettuato con successo!</p>
+		                  </div>
+		                  
+		                  <div id="customAlertNotLogged" class="custom-alert">
+		                      <span class="close" onclick="chiudiAlertNotLog()">&times;</span>
+		                      <p>Per acquistare devi aver effettuato il login o esserti registrato!</p>
+		                  </div>
 			        </div>  
 			
 			        <script>
-			          if (loggedIn) {
+			          if (loggedIn) { //non si verifica mai true e quindi fa sempre vedere il tasto del not log
 			            document.getElementById("pagaOraLoggedIn").style.display = "inline-block";
 			          } else {
 			            document.getElementById("pagaOraNotLoggedIn").style.display = "inline-block";

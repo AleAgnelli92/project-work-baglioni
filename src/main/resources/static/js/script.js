@@ -26,25 +26,28 @@ document.querySelector('.navbar-toggler')[
 });
 
 function mostraAlertLog() {
-	var customAlert = document.getElementById('customAlert');
+	var customAlert = document.getElementById('customAlertLogged');
 	customAlert.style.display = 'block';
+	
 						}
 						
+
+						
 function mostraAlertNotLog() {
-	var log = document.getElementById('alertLog');
+	var log = document.getElementById('customAlertNotLogged');
 	log.style.display = 'block';
 						}
 						
 function chiudiAlertLog() {
-    var customAlert = document.getElementById('customAlert');
+    var customAlert = document.getElementById('customAlertLogged');
     customAlert.style.display = 'none';
 
     window.location.href = "/ordine/registraordine";
 }
 
 function chiudiAlertNotLog() {
-    var customAlert = document.getElementById('alertLog');
-    customAlert.style.display = 'none';
+    var customAlertNL = document.getElementById('customAlertNotLogged');
+    customAlertNL.style.display = 'none';
 
     window.location.href = "login";
 }
@@ -77,7 +80,9 @@ function closeConfirm() {
          confirmDiv.style.display = "none";
 }
  
-
+window.addEventListener("click", function(){
+  document.getElementById("demo").innerHTML = "Hello World!";
+});
 
 
 
